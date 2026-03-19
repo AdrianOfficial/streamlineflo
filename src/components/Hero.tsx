@@ -1,47 +1,52 @@
-import { ArrowRight } from "lucide-react";
-
 const Hero = () => {
   const scrollToForm = () => {
     document.getElementById('audit-form')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-    <section className="min-h-screen flex flex-col bg-white">
+    <section className="min-h-screen bg-[#0e0e0e] flex flex-col">
       {/* Nav */}
-      <header className="border-b border-[#e5e7eb]">
-        <div className="container mx-auto px-8 py-5 flex items-center justify-between">
-          <img src="/logo.png" alt="StreamlineFlo" className="h-9 w-auto" />
-          <button
-            onClick={scrollToForm}
-            className="text-sm text-[#6b7280] hover:text-[#111827] transition-colors"
-          >
-            Get in touch
-          </button>
-        </div>
+      <header className="px-8 lg:px-14 py-6 flex items-center justify-between border-b border-[#1e1e1e]">
+        <img
+          src="/logo.png"
+          alt="StreamlineFlo"
+          className="h-8 w-auto"
+          style={{ filter: 'brightness(0) invert(1)' }}
+        />
+        <button
+          onClick={scrollToForm}
+          className="text-xs text-[#5a5a5a] hover:text-[#f0f0f0] transition-colors tracking-widest uppercase"
+        >
+          Get in touch
+        </button>
       </header>
 
-      {/* Hero */}
-      <div className="flex-1 flex items-center">
-        <div className="container mx-auto px-8 py-24">
-          <div className="max-w-2xl">
-            <p className="text-sm text-[#6b7280] mb-6 tracking-wide uppercase font-medium">
-              Workflow Automation
-            </p>
-            <h1 className="text-5xl md:text-6xl font-semibold text-[#111827] leading-[1.08] mb-8">
-              Your team shouldn't be doing robot work.
-            </h1>
-            <p className="text-lg text-[#6b7280] leading-relaxed mb-10 max-w-lg">
-              We build custom automation systems that handle your repetitive processes —
-              so your people can do the work that actually moves your business forward.
-            </p>
-            <button
-              onClick={scrollToForm}
-              className="inline-flex items-center gap-2 bg-[#111827] text-white text-sm font-medium px-6 py-3 rounded-md hover:bg-[#1f2937] transition-colors"
-            >
-              Book a free audit
-              <ArrowRight className="w-4 h-4" />
-            </button>
-          </div>
+      {/* Hero body — fills remaining height, content pins to bottom */}
+      <div className="flex-1 flex flex-col justify-end px-8 lg:px-14 pb-16 pt-20">
+        {/* Giant headline */}
+        <h1
+          className="text-[#f0f0f0] font-bold mb-12"
+          style={{
+            fontSize: 'clamp(2.8rem, 7.5vw, 7.2rem)',
+            lineHeight: 0.95,
+            letterSpacing: '-0.04em',
+          }}
+        >
+          Stop paying people<br />
+          to do robot work.
+        </h1>
+
+        {/* Sub-row: description left, CTA right */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 border-t border-[#1e1e1e] pt-8">
+          <p className="text-[#5a5a5a] text-base leading-relaxed max-w-xs">
+            We build custom workflow automation for businesses that have outgrown doing things manually.
+          </p>
+          <button
+            onClick={scrollToForm}
+            className="self-start md:self-auto text-sm text-[#f0f0f0] border border-[#2e2e2e] px-7 py-3.5 hover:border-[#5a5a5a] hover:bg-[#161616] transition-all whitespace-nowrap"
+          >
+            Book a free audit →
+          </button>
         </div>
       </div>
     </section>

@@ -1,60 +1,62 @@
 const services = [
   {
-    number: "01",
-    title: "AI Process Automation",
-    description: "We automate the repetitive decisions and tasks your team deals with daily — data entry, routing, approvals, notifications — using AI that adapts to how your business works.",
+    num: '01',
+    title: 'AI Process Automation',
+    description:
+      'Intelligent automation that handles the repetitive decisions your team makes every day — routing, approvals, notifications, data entry — without anyone lifting a finger.',
   },
   {
-    number: "02",
-    title: "Business Process Automation",
-    description: "End-to-end workflow automation that connects your tools, eliminates manual hand-offs, and keeps your operations running without constant human input.",
+    num: '02',
+    title: 'Business Process Automation',
+    description:
+      'End-to-end workflow automation that connects your tools and removes manual hand-offs. Operations that used to need constant supervision run on their own.',
   },
   {
-    number: "03",
-    title: "Analytics & Reporting",
-    description: "Automated dashboards and reports delivered on schedule, so you always know how your processes are performing without pulling the data yourself.",
+    num: '03',
+    title: 'Reporting & Analytics',
+    description:
+      'Automated dashboards and scheduled reports so you always know how your processes are performing — without anyone pulling data by hand.',
   },
   {
-    number: "04",
-    title: "Maintenance & Support",
-    description: "We keep your automations running. Ongoing monitoring, updates as your tools change, and fast turnaround if something breaks.",
+    num: '04',
+    title: 'Maintenance & Support',
+    description:
+      'Ongoing monitoring and rapid updates as your stack evolves. When something breaks or a tool changes its API, we fix it before it becomes your problem.',
   },
   {
-    number: "05",
-    title: "Custom Development",
-    description: "When off-the-shelf doesn't cut it — bespoke automation built around your specific systems, including legacy software and complex internal workflows.",
+    num: '05',
+    title: 'Custom Development',
+    description:
+      'When nothing off-the-shelf fits — bespoke automation built around your exact systems, including legacy software and complex internal business logic.',
   },
 ];
 
 const Services = () => {
   return (
-    <section className="bg-white py-24 border-t border-[#e5e7eb]">
-      <div className="container mx-auto px-8">
-        {/* Header */}
-        <div className="mb-16">
-          <p className="text-sm text-[#6b7280] tracking-wide uppercase font-medium mb-4">Services</p>
-          <h2 className="text-3xl md:text-4xl font-semibold text-[#111827] max-w-lg leading-tight">
-            Everything you need to run on autopilot.
-          </h2>
-        </div>
+    <section className="bg-[#0e0e0e] px-8 lg:px-14 py-20 border-t border-[#1e1e1e]">
+      <p className="text-xs text-[#3a3a3a] tracking-[0.25em] uppercase mb-16">
+        What we do
+      </p>
 
-        {/* Service rows */}
-        <div className="divide-y divide-[#e5e7eb]">
-          {services.map((service) => (
-            <div
-              key={service.number}
-              className="py-8 grid grid-cols-1 md:grid-cols-[200px_1fr] gap-4 md:gap-16 group"
-            >
-              <div>
-                <span className="text-xs text-[#9ca3af] font-mono">{service.number}</span>
-                <h3 className="text-base font-semibold text-[#111827] mt-1">{service.title}</h3>
-              </div>
-              <p className="text-[#6b7280] leading-relaxed text-sm md:text-base max-w-2xl">
-                {service.description}
-              </p>
-            </div>
-          ))}
-        </div>
+      <div>
+        {services.map((s, i) => (
+          <div
+            key={s.num}
+            className={`flex flex-col md:flex-row gap-6 md:gap-12 py-7 ${
+              i !== services.length - 1 ? 'border-b border-[#1a1a1a]' : ''
+            }`}
+          >
+            <span className="text-xs text-[#2e2e2e] font-mono flex-shrink-0 mt-0.5 w-6">
+              {s.num}
+            </span>
+            <h3 className="text-[#c0c0c0] font-medium text-sm flex-shrink-0 md:w-48">
+              {s.title}
+            </h3>
+            <p className="text-[#5a5a5a] text-sm leading-relaxed max-w-xl">
+              {s.description}
+            </p>
+          </div>
+        ))}
       </div>
     </section>
   );
