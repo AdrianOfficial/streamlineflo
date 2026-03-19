@@ -1,81 +1,76 @@
-// src/components/Services.tsx
-import { Card, CardContent, CardDescription, CardHeader } from "@/components/ui/card";
-import { Bot, Workflow, BarChart3, Clock, Cpu } from "lucide-react";
+import { Bot, Workflow, BarChart3, Clock, Cpu, Check } from "lucide-react";
+
+const services = [
+  {
+    icon: Bot,
+    title: "AI Process Automation",
+    description: "Intelligent automation that learns and adapts to your business processes, eliminating repetitive manual work around the clock.",
+    features: ["Smart decision making", "Machine learning algorithms", "24/7 automated operation"]
+  },
+  {
+    icon: Workflow,
+    title: "Business Process Automation",
+    description: "Streamline complex workflows with advanced automation tools, workflow management systems, and seamless third-party integrations.",
+    features: ["Automated workflows", "Process optimization", "Enterprise integration"]
+  },
+  {
+    icon: BarChart3,
+    title: "Analytics & Insights",
+    description: "Data-driven visibility into your automated processes — measure ROI, track performance, and find new opportunities to optimize.",
+    features: ["Performance metrics", "Process analytics", "ROI tracking"]
+  },
+  {
+    icon: Clock,
+    title: "Maintenance & Support",
+    description: "Ongoing support to keep your automations running smoothly. We monitor, optimize, and resolve issues before they impact your business.",
+    features: ["24/7 monitoring", "Performance optimization", "Expert technical support"]
+  },
+  {
+    icon: Cpu,
+    title: "Custom Automation Development",
+    description: "Bespoke automation solutions built around your exact requirements — including legacy system integration and unique business logic.",
+    features: ["Custom-built solutions", "Legacy system integration"]
+  }
+];
 
 const Services = () => {
-  const services = [
-    {
-      icon: Bot,
-      title: "AI Process Automation",
-      description: "StreamlineFlo provides intelligent automation and robotic process automation (RPA) that learns and adapts to your business processes, eliminating repetitive manual tasks.",
-      features: ["Smart Decision Making", "Machine Learning Algorithms", "24/7 Automated Operation"]
-    },
-    {
-      icon: Workflow,
-      title: "Business Process Automation",
-      description: "StreamlineFlo helps streamline complex business workflows with advanced automation tools, workflow management systems, and seamless integrations.",
-      features: ["Automated Workflows", "Process Optimization", "Enterprise Integration"]
-    },
-    {
-      icon: BarChart3,
-      title: "Automation Analytics & Insights",
-      description: "With StreamlineFlo, you gain data-driven insights to optimize automated processes, measure automation ROI, and identify new workflow automation opportunities.",
-      features: ["Automation Performance Metrics", "Process Analytics", "ROI Optimization"]
-    },
-    {
-      icon: Clock,
-      title: "Automation Maintenance & Support",
-      description: "StreamlineFlo offers comprehensive maintenance and support services to ensure your automated workflows and business processes run smoothly.",
-      features: ["24/7 Automation Monitoring", "Performance Optimization", "Expert Technical Support"]
-    },
-    {
-      icon: Cpu,
-      title: "Custom Automation Development",
-      description: "StreamlineFlo delivers tailored workflow automation and intelligent automation solutions built specifically for your unique business process requirements.",
-      features: ["Bespoke Automation Solutions", "Legacy System Integration"]
-    }
-  ];
-
   return (
-    <section className="py-24 relative">
-      <div className="container mx-auto px-6 relative">
-        <div className="text-center mb-16 animate-slide-up">
-          <h2 className="font-display text-4xl md:text-5xl font-bold mb-6 heading-glow">
-            Our <span className="gradient-text">Workflow Automation</span> Services
+    <section className="bg-slate-50 py-24">
+      <div className="container mx-auto px-6">
+        {/* Section header */}
+        <div className="max-w-2xl mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            What we do
           </h2>
-          <p className="font-body text-xl text-muted-foreground max-w-3xl mx-auto">
-            Comprehensive business process automation and intelligent automation solutions from StreamlineFlo designed to transform your operations, reduce manual tasks, and accelerate digital transformation.
+          <p className="text-lg text-slate-500 leading-relaxed">
+            End-to-end automation services designed to cut manual work, reduce errors,
+            and give your team more time for what matters.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
+        {/* Services grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
-            <Card 
-              key={index} 
-              aria-label={`Service: ${service.title} by StreamlineFlo`}
-              className="card-glow hover-lift bg-card/80 backdrop-blur-sm border-border/50 animate-scale-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
+            <div
+              key={index}
+              className="bg-white border border-slate-200 rounded-xl p-6 hover:shadow-md transition-shadow duration-200"
             >
-              <CardHeader className="text-center">
-                <div className="mx-auto w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mb-4 animate-pulse-glow">
-                  <service.icon className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="font-display text-xl font-bold text-glow">{service.title}</h3>
-                <CardDescription className="font-body text-muted-foreground">
-                  {service.description}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2">
-                  {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center font-body text-sm">
-                      <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
+              <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center mb-4">
+                <service.icon className="w-5 h-5 text-blue-600" />
+              </div>
+              <h3 className="font-semibold text-slate-900 mb-2 text-lg">{service.title}</h3>
+              <p className="text-slate-500 text-sm leading-relaxed mb-4">
+                {service.description}
+              </p>
+              <ul className="space-y-1.5">
+                {service.features.map((feature, i) => (
+                  <li key={i} className="flex items-center gap-2 text-sm text-slate-600">
+                    <Check className="w-3.5 h-3.5 text-blue-500 flex-shrink-0" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
           ))}
         </div>
       </div>

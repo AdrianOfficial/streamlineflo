@@ -1,31 +1,30 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import { Sparkles, ArrowRight } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import emailjs from '@emailjs/browser';
 
-// 👇 PUT YOUR EMAILJS CREDENTIALS HERE
 const EMAILJS_SERVICE_ID = 'service_uf4mka8';
 const EMAILJS_TEMPLATE_ID = 'template_pq7ii6s';
 const EMAILJS_PUBLIC_KEY = 'WjT4D4l5GOzfZPMao';
 
+const benefits = [
+  "Comprehensive workflow analysis",
+  "Custom automation recommendations",
+  "ROI projections and cost savings",
+  "Implementation roadmap",
+  "Priority automation opportunities",
+];
+
 const AuditForm = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    company: ""
-  });
+  const [formData, setFormData] = useState({ name: "", email: "", company: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -33,30 +32,29 @@ const AuditForm = () => {
     setIsSubmitting(true);
 
     try {
-      // Send email using EmailJS with correct template variables
       await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
         {
-          name: formData.name,                        // {{name}}
-          email: formData.email,                      // {{email}}
-          message: `Company: ${formData.company}`,    // {{message}}
-          time: new Date().toLocaleString(),          // {{time}}
+          name: formData.name,
+          email: formData.email,
+          message: `Company: ${formData.company}`,
+          time: new Date().toLocaleString(),
         },
         EMAILJS_PUBLIC_KEY
       );
 
       toast({
-        title: "Audit Request Submitted!",
-        description: "We'll contact you within 24 hours to schedule your free workflow audit.",
+        title: "Request received!",
+        description: "We'll be in touch within 24 hours to schedule your free audit.",
       });
 
       setFormData({ name: "", email: "", company: "" });
     } catch (error) {
       console.error('EmailJS error:', error);
       toast({
-        title: "Submission Failed",
-        description: "There was an error submitting your request. Please try again.",
+        title: "Something went wrong",
+        description: "Please try again or email us directly at hello@streamlineflo.com.",
         variant: "destructive",
       });
     } finally {
@@ -65,122 +63,112 @@ const AuditForm = () => {
   };
 
   return (
-    <section id="audit-form" className="py-24 relative">
-      <div className="container mx-auto px-6 relative">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12 animate-slide-up">
-            <h2 className="font-display text-4xl md:text-5xl font-bold mb-6 heading-glow">
-              Get Your <span className="gradient-text">Free</span> Workflow Audit
-            </h2>
-            <p className="font-body text-xl text-muted-foreground max-w-2xl mx-auto">
-              Discover hidden automation opportunities in your business. Our experts will 
-              analyze your workflows and provide actionable insights - completely free.
-            </p>
-          </div>
+    <section id="audit-form" className="py-24 bg-white">
+      <div className="container mx-auto px-6">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Benefits */}
-            <div className="space-y-6 animate-scale-in">
-              <h3 className="font-display text-2xl font-bold mb-6 text-glow">What You'll Get:</h3>
-              <div className="space-y-4">
-                {[
-                  "Comprehensive workflow analysis",
-                  "Custom automation recommendations",
-                  "ROI projections and cost savings",
-                  "Implementation roadmap",
-                  "Priority automation opportunities"
-                ].map((benefit, index) => (
-                  <div key={index} className="flex items-center">
-                    <Sparkles className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
-                    <span className="font-body text-muted-foreground">{benefit}</span>
-                  </div>
+            {/* Left: Benefits */}
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                Get your free workflow audit
+              </h2>
+              <p className="text-slate-500 text-lg leading-relaxed mb-10">
+                In a 30-minute call, we'll map out where automation can save your team
+                the most time — with zero commitment or cost.
+              </p>
+
+              <ul className="space-y-4 mb-10">
+                {benefits.map((benefit, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                    <span className="text-slate-700">{benefit}</span>
+                  </li>
                 ))}
-              </div>
+              </ul>
 
-              <div className="mt-8 p-6 rounded-2xl bg-gradient-primary/10 border border-primary/20">
-                <p className="text-sm text-muted-foreground">
-                  <strong className="text-primary">No commitment required.</strong> This audit is 
-                  completely free with no strings attached. We'll provide valuable insights 
-                  regardless of whether you choose to work with us.
+              <div className="bg-slate-50 border border-slate-200 rounded-xl p-5">
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  <strong className="text-slate-800 font-medium">No commitment required.</strong>{" "}
+                  This audit is completely free. We'll provide honest insights whether or not you
+                  choose to work with us.
                 </p>
               </div>
             </div>
 
-            {/* Form */}
-            <Card className="card-glow bg-card/90 backdrop-blur-sm border-border/50 animate-scale-in">
-              <CardHeader className="text-center">
-                <CardTitle className="font-display text-2xl font-bold text-glow">Book Your Free Audit</CardTitle>
-                <CardDescription className="font-body">
-                  Takes less than 2 minutes. We'll contact you within 24 hours.
-                </CardDescription>
-              </CardHeader>
+            {/* Right: Form */}
+            <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm">
+              <h3 className="text-xl font-semibold text-slate-900 mb-1">Book your free audit</h3>
+              <p className="text-slate-500 text-sm mb-6">Takes less than 2 minutes. We'll respond within 24 hours.</p>
 
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="name">Full Name *</Label>
-                    <Input
-                      id="name"
-                      name="name"
-                      type="text"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      required
-                      className="bg-background/50 border-border/50 focus:border-primary"
-                      placeholder="John Smith"
-                    />
-                  </div>
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <div className="space-y-1.5">
+                  <Label htmlFor="name" className="text-sm font-medium text-slate-700">
+                    Full name
+                  </Label>
+                  <Input
+                    id="name"
+                    name="name"
+                    type="text"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    required
+                    placeholder="John Smith"
+                    className="h-10 border-slate-200 focus:border-blue-500 focus:ring-blue-500 text-slate-900 placeholder:text-slate-400"
+                  />
+                </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Business Email *</Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      required
-                      className="bg-background/50 border-border/50 focus:border-primary"
-                      placeholder="john@company.com"
-                    />
-                  </div>
+                <div className="space-y-1.5">
+                  <Label htmlFor="email" className="text-sm font-medium text-slate-700">
+                    Business email
+                  </Label>
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required
+                    placeholder="john@company.com"
+                    className="h-10 border-slate-200 focus:border-blue-500 focus:ring-blue-500 text-slate-900 placeholder:text-slate-400"
+                  />
+                </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="company">Company Name *</Label>
-                    <Input
-                      id="company"
-                      name="company"
-                      type="text"
-                      value={formData.company}
-                      onChange={handleInputChange}
-                      required
-                      className="bg-background/50 border-border/50 focus:border-primary"
-                      placeholder="Your Company Inc."
-                    />
-                  </div>
+                <div className="space-y-1.5">
+                  <Label htmlFor="company" className="text-sm font-medium text-slate-700">
+                    Company name
+                  </Label>
+                  <Input
+                    id="company"
+                    name="company"
+                    type="text"
+                    value={formData.company}
+                    onChange={handleInputChange}
+                    required
+                    placeholder="Your Company Inc."
+                    className="h-10 border-slate-200 focus:border-blue-500 focus:ring-blue-500 text-slate-900 placeholder:text-slate-400"
+                  />
+                </div>
 
-                  <Button
-                    type="submit"
-                    className="w-full bg-gradient-primary hover:opacity-90 transition-opacity text-lg py-6 glow-primary"
-                    disabled={isSubmitting}
-                  >
-                    {isSubmitting ? (
-                      "Submitting..."
-                    ) : (
-                      <>
-                        Book Free Audit
-                        <ArrowRight className="ml-2 w-5 h-5" />
-                      </>
-                    )}
-                  </Button>
+                <Button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full h-11 bg-blue-600 hover:bg-blue-700 text-white font-medium text-sm rounded-lg shadow-sm"
+                >
+                  {isSubmitting ? "Sending..." : (
+                    <>
+                      Book Free Audit
+                      <ArrowRight className="ml-2 w-4 h-4" />
+                    </>
+                  )}
+                </Button>
 
-                  <p className="text-xs text-muted-foreground text-center">
-                    By submitting this form, you agree to receive communications from StreamlineFlo. 
-                    We respect your privacy and will never share your information.
-                  </p>
-                </form>
-              </CardContent>
-            </Card>
+                <p className="text-xs text-slate-400 text-center leading-relaxed">
+                  We respect your privacy and will never share your information.
+                </p>
+              </form>
+            </div>
+
           </div>
         </div>
       </div>
