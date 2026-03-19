@@ -45,41 +45,51 @@ const AuditForm = () => {
   };
 
   const inputClass =
-    'w-full bg-[#0e0e0e] border border-[#272727] text-[#f0f0f0] placeholder-[#2e2e2e] px-3.5 py-3 text-sm focus:border-[#5a5a5a] focus:outline-none transition-colors';
+    'w-full bg-[#0e0e0e] border border-[#272727] text-[#f0f0f0] placeholder-[#383838] px-4 py-3.5 text-base focus:border-[#5a5a5a] focus:outline-none transition-colors';
 
   return (
     <section
       id="audit-form"
-      className="bg-[#121212] border-t border-[#1e1e1e] px-8 lg:px-14 py-20"
+      className="bg-[#0d0d0d] border-t border-[#1e1e1e] px-8 lg:px-14 py-24"
     >
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-28 max-w-5xl">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-28">
         {/* Left */}
         <div className="flex flex-col justify-between gap-10">
           <div>
-            <p className="text-xs text-[#6a6a6a] tracking-[0.25em] uppercase mb-6">
+            <p className="text-xs text-[#5a5a5a] tracking-[0.25em] uppercase mb-6">
               Free Audit
             </p>
             <h2
-              className="text-[#f0f0f0] font-bold mb-5"
+              className="text-[#f0f0f0] font-black mb-6"
               style={{
-                fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)',
-                lineHeight: 1.05,
-                letterSpacing: '-0.03em',
+                fontSize: 'clamp(2rem, 3.5vw, 3.2rem)',
+                lineHeight: 1.0,
+                letterSpacing: '-0.04em',
               }}
             >
               Find out what's costing your team time.
             </h2>
-            <p className="text-[#9a9a9a] text-sm leading-relaxed">
-              30 minutes. We'll map out exactly which parts of your workflow can be automated
-              and what it's worth. No pitch. No commitment.
+            <p className="text-[#8a8a8a] text-lg leading-relaxed mb-8">
+              30 minutes. We'll map out exactly which parts of your workflow can be automated and what it's worth. No pitch. No commitment.
             </p>
+            <div className="flex flex-col gap-4">
+              {['Free, no obligation', 'Written summary delivered after the call', 'We work with any tool stack'].map((item) => (
+                <div key={item} className="flex items-center gap-3">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <circle cx="8" cy="8" r="7" stroke="#2e2e2e" strokeWidth="1" />
+                    <polyline points="5,8 7,10.5 11,6" stroke="#5a5a5a" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  <span className="text-[#7a7a7a] text-base">{item}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
         {/* Right: form */}
-        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-5">
           <div>
-            <label className="block text-xs text-[#7a7a7a] tracking-wide mb-2">Full name</label>
+            <label className="block text-sm text-[#7a7a7a] mb-2">Full name</label>
             <input
               name="name"
               type="text"
@@ -91,7 +101,7 @@ const AuditForm = () => {
             />
           </div>
           <div>
-            <label className="block text-xs text-[#7a7a7a] tracking-wide mb-2">Work email</label>
+            <label className="block text-sm text-[#7a7a7a] mb-2">Work email</label>
             <input
               name="email"
               type="email"
@@ -103,7 +113,7 @@ const AuditForm = () => {
             />
           </div>
           <div>
-            <label className="block text-xs text-[#7a7a7a] tracking-wide mb-2">Company</label>
+            <label className="block text-sm text-[#7a7a7a] mb-2">Company</label>
             <input
               name="company"
               type="text"
@@ -117,11 +127,11 @@ const AuditForm = () => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="mt-2 w-full bg-[#f0f0f0] text-[#0e0e0e] text-sm font-semibold py-3.5 hover:bg-white transition-colors disabled:opacity-40"
+            className="mt-2 w-full bg-[#f0f0f0] text-[#0e0e0e] text-base font-bold py-4 hover:bg-white transition-colors disabled:opacity-40"
           >
             {isSubmitting ? 'Sending…' : 'Book free audit →'}
           </button>
-          <p className="text-xs text-[#5a5a5a] text-center">
+          <p className="text-sm text-[#4a4a4a] text-center">
             No spam. Your details stay with us.
           </p>
         </form>
