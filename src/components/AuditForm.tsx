@@ -1,36 +1,23 @@
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
 import emailjs from '@emailjs/browser';
 
 const EMAILJS_SERVICE_ID = 'service_uf4mka8';
 const EMAILJS_TEMPLATE_ID = 'template_pq7ii6s';
 const EMAILJS_PUBLIC_KEY = 'WjT4D4l5GOzfZPMao';
 
-const benefits = [
-  "Comprehensive workflow analysis",
-  "Custom automation recommendations",
-  "ROI projections and cost savings",
-  "Implementation roadmap",
-  "Priority automation opportunities",
-];
-
 const AuditForm = () => {
-  const [formData, setFormData] = useState({ name: "", email: "", company: "" });
+  const [formData, setFormData] = useState({ name: '', email: '', company: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-
     try {
       await emailjs.send(
         EMAILJS_SERVICE_ID,
@@ -43,18 +30,13 @@ const AuditForm = () => {
         },
         EMAILJS_PUBLIC_KEY
       );
-
-      toast({
-        title: "Request received!",
-        description: "We'll be in touch within 24 hours to schedule your free audit.",
-      });
-
-      setFormData({ name: "", email: "", company: "" });
-    } catch (error) {
-      console.error('EmailJS error:', error);
+      toast({ title: "We'll be in touch.", description: "Expect a reply within 24 hours." });
+      setFormData({ name: '', email: '', company: '' });
+    } catch (err) {
+      console.error(err);
       toast({
         title: "Something went wrong",
-        description: "Please try again or email us directly at hello@streamlineflo.com.",
+        description: "Email us at hello@streamlineflo.com",
         variant: "destructive",
       });
     } finally {
@@ -62,115 +44,87 @@ const AuditForm = () => {
     }
   };
 
+  const inputClass =
+    'w-full bg-[#0e0e0e] border border-[#272727] text-[#f0f0f0] placeholder-[#2e2e2e] px-3.5 py-3 text-sm focus:border-[#5a5a5a] focus:outline-none transition-colors';
+
   return (
-    <section id="audit-form" className="py-24 bg-white">
-      <div className="container mx-auto px-6">
-        <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-
-            {/* Left: Benefits */}
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                Get your free workflow audit
-              </h2>
-              <p className="text-slate-500 text-lg leading-relaxed mb-10">
-                In a 30-minute call, we'll map out where automation can save your team
-                the most time — with zero commitment or cost.
-              </p>
-
-              <ul className="space-y-4 mb-10">
-                {benefits.map((benefit, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-slate-700">{benefit}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <div className="bg-slate-50 border border-slate-200 rounded-xl p-5">
-                <p className="text-sm text-slate-600 leading-relaxed">
-                  <strong className="text-slate-800 font-medium">No commitment required.</strong>{" "}
-                  This audit is completely free. We'll provide honest insights whether or not you
-                  choose to work with us.
-                </p>
-              </div>
-            </div>
-
-            {/* Right: Form */}
-            <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm">
-              <h3 className="text-xl font-semibold text-slate-900 mb-1">Book your free audit</h3>
-              <p className="text-slate-500 text-sm mb-6">Takes less than 2 minutes. We'll respond within 24 hours.</p>
-
-              <form onSubmit={handleSubmit} className="space-y-5">
-                <div className="space-y-1.5">
-                  <Label htmlFor="name" className="text-sm font-medium text-slate-700">
-                    Full name
-                  </Label>
-                  <Input
-                    id="name"
-                    name="name"
-                    type="text"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    required
-                    placeholder="John Smith"
-                    className="h-10 border-slate-200 focus:border-blue-500 focus:ring-blue-500 text-slate-900 placeholder:text-slate-400"
-                  />
-                </div>
-
-                <div className="space-y-1.5">
-                  <Label htmlFor="email" className="text-sm font-medium text-slate-700">
-                    Business email
-                  </Label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    required
-                    placeholder="john@company.com"
-                    className="h-10 border-slate-200 focus:border-blue-500 focus:ring-blue-500 text-slate-900 placeholder:text-slate-400"
-                  />
-                </div>
-
-                <div className="space-y-1.5">
-                  <Label htmlFor="company" className="text-sm font-medium text-slate-700">
-                    Company name
-                  </Label>
-                  <Input
-                    id="company"
-                    name="company"
-                    type="text"
-                    value={formData.company}
-                    onChange={handleInputChange}
-                    required
-                    placeholder="Your Company Inc."
-                    className="h-10 border-slate-200 focus:border-blue-500 focus:ring-blue-500 text-slate-900 placeholder:text-slate-400"
-                  />
-                </div>
-
-                <Button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full h-11 bg-blue-600 hover:bg-blue-700 text-white font-medium text-sm rounded-lg shadow-sm"
-                >
-                  {isSubmitting ? "Sending..." : (
-                    <>
-                      Book Free Audit
-                      <ArrowRight className="ml-2 w-4 h-4" />
-                    </>
-                  )}
-                </Button>
-
-                <p className="text-xs text-slate-400 text-center leading-relaxed">
-                  We respect your privacy and will never share your information.
-                </p>
-              </form>
-            </div>
-
+    <section
+      id="audit-form"
+      className="bg-[#121212] border-t border-[#1e1e1e] px-8 lg:px-14 py-20"
+    >
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-28 max-w-5xl">
+        {/* Left */}
+        <div className="flex flex-col justify-between gap-10">
+          <div>
+            <p className="text-xs text-[#3a3a3a] tracking-[0.25em] uppercase mb-6">
+              Free Audit
+            </p>
+            <h2
+              className="text-[#f0f0f0] font-bold mb-5"
+              style={{
+                fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)',
+                lineHeight: 1.05,
+                letterSpacing: '-0.03em',
+              }}
+            >
+              Find out what's costing your team time.
+            </h2>
+            <p className="text-[#5a5a5a] text-sm leading-relaxed">
+              30 minutes. We'll map out exactly which parts of your workflow can be automated
+              and what it's worth. No pitch. No commitment.
+            </p>
           </div>
         </div>
+
+        {/* Right: form */}
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+          <div>
+            <label className="block text-xs text-[#3a3a3a] tracking-wide mb-2">Full name</label>
+            <input
+              name="name"
+              type="text"
+              value={formData.name}
+              onChange={handleChange}
+              required
+              placeholder="John Smith"
+              className={inputClass}
+            />
+          </div>
+          <div>
+            <label className="block text-xs text-[#3a3a3a] tracking-wide mb-2">Work email</label>
+            <input
+              name="email"
+              type="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              placeholder="john@company.com"
+              className={inputClass}
+            />
+          </div>
+          <div>
+            <label className="block text-xs text-[#3a3a3a] tracking-wide mb-2">Company</label>
+            <input
+              name="company"
+              type="text"
+              value={formData.company}
+              onChange={handleChange}
+              required
+              placeholder="Your Company"
+              className={inputClass}
+            />
+          </div>
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className="mt-2 w-full bg-[#f0f0f0] text-[#0e0e0e] text-sm font-semibold py-3.5 hover:bg-white transition-colors disabled:opacity-40"
+          >
+            {isSubmitting ? 'Sending…' : 'Book free audit →'}
+          </button>
+          <p className="text-xs text-[#2e2e2e] text-center">
+            No spam. Your details stay with us.
+          </p>
+        </form>
       </div>
     </section>
   );

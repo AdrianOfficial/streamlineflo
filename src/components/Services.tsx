@@ -1,78 +1,62 @@
-import { Bot, Workflow, BarChart3, Clock, Cpu, Check } from "lucide-react";
-
 const services = [
   {
-    icon: Bot,
-    title: "AI Process Automation",
-    description: "Intelligent automation that learns and adapts to your business processes, eliminating repetitive manual work around the clock.",
-    features: ["Smart decision making", "Machine learning algorithms", "24/7 automated operation"]
+    num: '01',
+    title: 'AI Process Automation',
+    description:
+      'Intelligent automation that handles the repetitive decisions your team makes every day — routing, approvals, notifications, data entry — without anyone lifting a finger.',
   },
   {
-    icon: Workflow,
-    title: "Business Process Automation",
-    description: "Streamline complex workflows with advanced automation tools, workflow management systems, and seamless third-party integrations.",
-    features: ["Automated workflows", "Process optimization", "Enterprise integration"]
+    num: '02',
+    title: 'Business Process Automation',
+    description:
+      'End-to-end workflow automation that connects your tools and removes manual hand-offs. Operations that used to need constant supervision run on their own.',
   },
   {
-    icon: BarChart3,
-    title: "Analytics & Insights",
-    description: "Data-driven visibility into your automated processes — measure ROI, track performance, and find new opportunities to optimize.",
-    features: ["Performance metrics", "Process analytics", "ROI tracking"]
+    num: '03',
+    title: 'Reporting & Analytics',
+    description:
+      'Automated dashboards and scheduled reports so you always know how your processes are performing — without anyone pulling data by hand.',
   },
   {
-    icon: Clock,
-    title: "Maintenance & Support",
-    description: "Ongoing support to keep your automations running smoothly. We monitor, optimize, and resolve issues before they impact your business.",
-    features: ["24/7 monitoring", "Performance optimization", "Expert technical support"]
+    num: '04',
+    title: 'Maintenance & Support',
+    description:
+      'Ongoing monitoring and rapid updates as your stack evolves. When something breaks or a tool changes its API, we fix it before it becomes your problem.',
   },
   {
-    icon: Cpu,
-    title: "Custom Automation Development",
-    description: "Bespoke automation solutions built around your exact requirements — including legacy system integration and unique business logic.",
-    features: ["Custom-built solutions", "Legacy system integration"]
-  }
+    num: '05',
+    title: 'Custom Development',
+    description:
+      'When nothing off-the-shelf fits — bespoke automation built around your exact systems, including legacy software and complex internal business logic.',
+  },
 ];
 
 const Services = () => {
   return (
-    <section className="bg-slate-50 py-24">
-      <div className="container mx-auto px-6">
-        {/* Section header */}
-        <div className="max-w-2xl mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-            What we do
-          </h2>
-          <p className="text-lg text-slate-500 leading-relaxed">
-            End-to-end automation services designed to cut manual work, reduce errors,
-            and give your team more time for what matters.
-          </p>
-        </div>
+    <section className="bg-[#0e0e0e] px-8 lg:px-14 py-20 border-t border-[#1e1e1e]">
+      <p className="text-xs text-[#3a3a3a] tracking-[0.25em] uppercase mb-16">
+        What we do
+      </p>
 
-        {/* Services grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className="bg-white border border-slate-200 rounded-xl p-6 hover:shadow-md transition-shadow duration-200"
-            >
-              <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center mb-4">
-                <service.icon className="w-5 h-5 text-blue-600" />
-              </div>
-              <h3 className="font-semibold text-slate-900 mb-2 text-lg">{service.title}</h3>
-              <p className="text-slate-500 text-sm leading-relaxed mb-4">
-                {service.description}
-              </p>
-              <ul className="space-y-1.5">
-                {service.features.map((feature, i) => (
-                  <li key={i} className="flex items-center gap-2 text-sm text-slate-600">
-                    <Check className="w-3.5 h-3.5 text-blue-500 flex-shrink-0" />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
+      <div>
+        {services.map((s, i) => (
+          <div
+            key={s.num}
+            className={`flex flex-col md:flex-row gap-6 md:gap-12 py-7 ${
+              i !== services.length - 1 ? 'border-b border-[#1a1a1a]' : ''
+            }`}
+          >
+            <span className="text-xs text-[#2e2e2e] font-mono flex-shrink-0 mt-0.5 w-6">
+              {s.num}
+            </span>
+            <h3 className="text-[#c0c0c0] font-medium text-sm flex-shrink-0 md:w-48">
+              {s.title}
+            </h3>
+            <p className="text-[#5a5a5a] text-sm leading-relaxed max-w-xl">
+              {s.description}
+            </p>
+          </div>
+        ))}
       </div>
     </section>
   );
