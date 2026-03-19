@@ -1,6 +1,5 @@
-  // src/components/Hero.tsx
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Zap, Brain, Target } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
   const scrollToForm = () => {
@@ -8,77 +7,75 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col overflow-hidden">
-      {/* Header with Logo */}
-      <header className="relative z-20 pt-8 px-6">
-        <div className="container mx-auto">
-          <img 
-            src="/logo.png" 
-            alt="StreamlineFlo Logo" 
-            className="h-24 md:h-32 lg:h-40 w-auto animate-scale-in"
+    <section className="min-h-screen flex flex-col bg-white">
+      {/* Navigation */}
+      <header className="border-b border-slate-100">
+        <div className="container mx-auto px-6 py-4 flex items-center justify-between">
+          <img
+            src="/logo.png"
+            alt="StreamlineFlo"
+            className="h-10 w-auto"
           />
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={scrollToForm}
+            className="border-slate-200 text-slate-700 hover:bg-slate-50 text-sm font-medium"
+          >
+            Get Free Audit
+          </Button>
         </div>
       </header>
 
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-glow opacity-60"></div>
-      <div className="absolute inset-0 bg-grid opacity-10"></div>
-      
-      {/* Floating Elements */}
-      <div className="absolute top-20 left-20 w-20 h-20 bg-primary/20 rounded-full blur-xl animate-float"></div>
-      <div className="absolute top-40 right-32 w-32 h-32 bg-secondary/20 rounded-full blur-xl animate-float" style={{ animationDelay: '2s' }}></div>
-      <div className="absolute bottom-20 left-1/4 w-16 h-16 bg-accent/20 rounded-full blur-xl animate-float" style={{ animationDelay: '4s' }}></div>
-
-      <div className="container mx-auto px-6 text-center relative z-10 flex-1 flex items-center justify-center">
-
-        {/* Hero Content */}
-        <div className="max-w-5xl mx-auto animate-slide-up">
-          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight heading-glow">
-          <span className="gradient-text">StreamlineFlo</span> — AI Workflow Automation
-          </h1>
-
-          
-          <p className="font-body text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-            Leading provider of intelligent automation solutions and automated workflows. 
-            Reduce manual tasks by 90%, streamline business processes, and scale with AI-powered automation.
-          </p>
-
-          {/* Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 max-w-3xl mx-auto">
-            <div className="flex flex-col items-center p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover-lift">
-              <Zap className="w-8 h-8 text-primary mb-2" />
-              <div className="text-2xl font-bold gradient-text">90%</div>
-              <div className="font-body text-sm text-muted-foreground">Time Saved</div>
+      {/* Hero Content */}
+      <div className="flex-1 flex items-center justify-center py-24">
+        <div className="container mx-auto px-6">
+          <div className="max-w-3xl mx-auto text-center">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 text-sm font-medium px-4 py-1.5 rounded-full mb-8 animate-fade-in">
+              <span className="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
+              AI Workflow Automation
             </div>
-            <div className="flex flex-col items-center p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover-lift">
-              <Brain className="w-8 h-8 text-secondary mb-2" />
-              <div className="text-2xl font-bold gradient-text">AI-Powered</div>
-              <div className="font-body text-sm text-muted-foreground">Intelligence</div>
-            </div>
-            <div className="flex flex-col items-center p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover-lift">
-              <Target className="w-8 h-8 text-accent mb-2" />
-              <div className="text-2xl font-bold gradient-text">100%</div>
-              <div className="font-body text-sm text-muted-foreground">ROI Focused</div>
-            </div>
-          </div>
 
-          {/* CTA Buttons */}
-          <div className="flex justify-center items-center">
-              <Button 
-                size="lg" 
-                className="bg-gradient-primary hover:opacity-90 transition-opacity text-lg px-8 py-6 glow-primary"
+            {/* Headline */}
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-slate-900 leading-[1.1] mb-6 animate-fade-in-delay-1">
+              Automate the work.{" "}
+              <span className="text-blue-600">Scale the results.</span>
+            </h1>
+
+            {/* Subtext */}
+            <p className="text-lg md:text-xl text-slate-500 leading-relaxed mb-10 max-w-2xl mx-auto animate-fade-in-delay-2">
+              StreamlineFlo helps businesses eliminate repetitive tasks with intelligent
+              automation — so your team can focus on work that actually moves the needle.
+            </p>
+
+            {/* CTA */}
+            <div className="animate-fade-in-delay-3">
+              <Button
+                size="lg"
                 onClick={scrollToForm}
+                className="bg-blue-600 hover:bg-blue-700 text-white text-base px-8 h-12 rounded-lg font-medium shadow-sm"
               >
-                Get Free Workflow Automation Audit
-                <ArrowRight className="ml-2 w-5 h-5" />
+                Get Your Free Workflow Audit
+                <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
-          </div>
-        </div>
+            </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-primary/50 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse"></div>
+            {/* Stats */}
+            <div className="mt-20 grid grid-cols-3 gap-8 max-w-lg mx-auto animate-fade-in-delay-3">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-slate-900">90%</div>
+                <div className="text-sm text-slate-500 mt-1">Time saved on manual tasks</div>
+              </div>
+              <div className="text-center border-x border-slate-100">
+                <div className="text-3xl font-bold text-slate-900">24/7</div>
+                <div className="text-sm text-slate-500 mt-1">Automated operation</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-slate-900">ROI</div>
+                <div className="text-sm text-slate-500 mt-1">Measurable returns</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
