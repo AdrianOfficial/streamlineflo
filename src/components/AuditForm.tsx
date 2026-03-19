@@ -45,7 +45,7 @@ const AuditForm = () => {
   };
 
   const inputClass =
-    'w-full bg-[#0e0e0e] border border-[#272727] text-[#f0f0f0] placeholder-[#383838] px-4 py-3.5 text-base focus:border-[#5a5a5a] focus:outline-none transition-colors';
+    'w-full bg-[#0e0e0e] border border-[#1e1e1e] text-[#e0e0e0] placeholder-[#2e2e2e] px-4 py-3.5 text-sm focus:border-[#3a3a3a] focus:outline-none transition-colors';
 
   return (
     <section
@@ -56,15 +56,15 @@ const AuditForm = () => {
         {/* Left */}
         <div className="flex flex-col justify-between gap-10">
           <div>
-            <p className="text-xs text-[#5a5a5a] tracking-[0.25em] uppercase mb-6">
+            <p className="text-xs text-[#4a4a4a] tracking-[0.2em] uppercase mb-6">
               Free Audit
             </p>
             <h2
-              className="text-[#f0f0f0] font-black mb-6"
+              className="text-[#f0f0f0] font-semibold mb-6"
               style={{
-                fontSize: 'clamp(2rem, 3.5vw, 3.2rem)',
-                lineHeight: 1.0,
-                letterSpacing: '-0.04em',
+                fontSize: 'clamp(2rem, 3.5vw, 3rem)',
+                lineHeight: 1.05,
+                letterSpacing: '-0.035em',
               }}
             >
               Find out what's costing your team time.
@@ -76,8 +76,8 @@ const AuditForm = () => {
               {['Free, no obligation', 'Written summary delivered after the call', 'We work with any tool stack'].map((item) => (
                 <div key={item} className="flex items-center gap-3">
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <circle cx="8" cy="8" r="7" stroke="#2e2e2e" strokeWidth="1" />
-                    <polyline points="5,8 7,10.5 11,6" stroke="#5a5a5a" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                    <circle cx="8" cy="8" r="7" stroke="#222" strokeWidth="0.75" />
+                    <polyline points="5,8 7,10.5 11,6" stroke="#4a4a4a" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                   <span className="text-[#7a7a7a] text-base">{item}</span>
                 </div>
@@ -127,7 +127,7 @@ const AuditForm = () => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="mt-2 w-full bg-[#f0f0f0] text-[#0e0e0e] text-base font-bold py-4 hover:bg-white transition-colors disabled:opacity-40"
+            className="mt-2 w-full bg-[#e8e8e8] text-[#0e0e0e] text-sm font-medium py-3.5 hover:bg-[#f5f5f5] transition-colors disabled:opacity-40"
           >
             {isSubmitting ? 'Sending…' : 'Book free audit →'}
           </button>
