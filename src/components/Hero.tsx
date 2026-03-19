@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
@@ -8,74 +7,40 @@ const Hero = () => {
 
   return (
     <section className="min-h-screen flex flex-col bg-white">
-      {/* Navigation */}
-      <header className="border-b border-slate-100">
-        <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-          <img
-            src="/logo.png"
-            alt="StreamlineFlo"
-            className="h-10 w-auto"
-          />
-          <Button
-            variant="outline"
-            size="sm"
+      {/* Nav */}
+      <header className="border-b border-[#e5e7eb]">
+        <div className="container mx-auto px-8 py-5 flex items-center justify-between">
+          <img src="/logo.png" alt="StreamlineFlo" className="h-9 w-auto" />
+          <button
             onClick={scrollToForm}
-            className="border-slate-200 text-slate-700 hover:bg-slate-50 text-sm font-medium"
+            className="text-sm text-[#6b7280] hover:text-[#111827] transition-colors"
           >
-            Get Free Audit
-          </Button>
+            Get in touch
+          </button>
         </div>
       </header>
 
-      {/* Hero Content */}
-      <div className="flex-1 flex items-center justify-center py-24">
-        <div className="container mx-auto px-6">
-          <div className="max-w-3xl mx-auto text-center">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 text-sm font-medium px-4 py-1.5 rounded-full mb-8 animate-fade-in">
-              <span className="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
-              AI Workflow Automation
-            </div>
-
-            {/* Headline */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-slate-900 leading-[1.1] mb-6 animate-fade-in-delay-1">
-              Automate the work.{" "}
-              <span className="text-blue-600">Scale the results.</span>
-            </h1>
-
-            {/* Subtext */}
-            <p className="text-lg md:text-xl text-slate-500 leading-relaxed mb-10 max-w-2xl mx-auto animate-fade-in-delay-2">
-              StreamlineFlo helps businesses eliminate repetitive tasks with intelligent
-              automation — so your team can focus on work that actually moves the needle.
+      {/* Hero */}
+      <div className="flex-1 flex items-center">
+        <div className="container mx-auto px-8 py-24">
+          <div className="max-w-2xl">
+            <p className="text-sm text-[#6b7280] mb-6 tracking-wide uppercase font-medium">
+              Workflow Automation
             </p>
-
-            {/* CTA */}
-            <div className="animate-fade-in-delay-3">
-              <Button
-                size="lg"
-                onClick={scrollToForm}
-                className="bg-blue-600 hover:bg-blue-700 text-white text-base px-8 h-12 rounded-lg font-medium shadow-sm"
-              >
-                Get Your Free Workflow Audit
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
-            </div>
-
-            {/* Stats */}
-            <div className="mt-20 grid grid-cols-3 gap-8 max-w-lg mx-auto animate-fade-in-delay-3">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-slate-900">90%</div>
-                <div className="text-sm text-slate-500 mt-1">Time saved on manual tasks</div>
-              </div>
-              <div className="text-center border-x border-slate-100">
-                <div className="text-3xl font-bold text-slate-900">24/7</div>
-                <div className="text-sm text-slate-500 mt-1">Automated operation</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-slate-900">ROI</div>
-                <div className="text-sm text-slate-500 mt-1">Measurable returns</div>
-              </div>
-            </div>
+            <h1 className="text-5xl md:text-6xl font-semibold text-[#111827] leading-[1.08] mb-8">
+              Your team shouldn't be doing robot work.
+            </h1>
+            <p className="text-lg text-[#6b7280] leading-relaxed mb-10 max-w-lg">
+              We build custom automation systems that handle your repetitive processes —
+              so your people can do the work that actually moves your business forward.
+            </p>
+            <button
+              onClick={scrollToForm}
+              className="inline-flex items-center gap-2 bg-[#111827] text-white text-sm font-medium px-6 py-3 rounded-md hover:bg-[#1f2937] transition-colors"
+            >
+              Book a free audit
+              <ArrowRight className="w-4 h-4" />
+            </button>
           </div>
         </div>
       </div>
