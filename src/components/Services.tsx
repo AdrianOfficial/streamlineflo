@@ -34,7 +34,7 @@ const services = [
 const Services = () => {
   return (
     <section className="bg-[#0e0e0e] px-8 lg:px-14 py-20 border-t border-[#1e1e1e]">
-      <p className="text-xs text-[#3a3a3a] tracking-[0.25em] uppercase mb-16">
+      <p className="text-xs text-[#6a6a6a] tracking-[0.25em] uppercase mb-16">
         What we do
       </p>
 
@@ -46,13 +46,13 @@ const Services = () => {
               i !== services.length - 1 ? 'border-b border-[#1a1a1a]' : ''
             }`}
           >
-            <span className="text-xs text-[#2e2e2e] font-mono flex-shrink-0 mt-0.5 w-6">
+            <span className="text-xs text-[#5a5a5a] font-mono flex-shrink-0 mt-0.5 w-6">
               {s.num}
             </span>
             <h3 className="text-[#c0c0c0] font-medium text-sm flex-shrink-0 md:w-48">
               {s.title}
             </h3>
-            <p className="text-[#5a5a5a] text-sm leading-relaxed max-w-xl">
+            <p className="text-[#9a9a9a] text-sm leading-relaxed max-w-xl">
               {s.description}
             </p>
           </div>

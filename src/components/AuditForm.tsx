@@ -56,7 +56,7 @@ const AuditForm = () => {
         {/* Left */}
         <div className="flex flex-col justify-between gap-10">
           <div>
-            <p className="text-xs text-[#3a3a3a] tracking-[0.25em] uppercase mb-6">
+            <p className="text-xs text-[#6a6a6a] tracking-[0.25em] uppercase mb-6">
               Free Audit
             </p>
             <h2
@@ -69,7 +69,7 @@ const AuditForm = () => {
             >
               Find out what's costing your team time.
             </h2>
-            <p className="text-[#5a5a5a] text-sm leading-relaxed">
+            <p className="text-[#9a9a9a] text-sm leading-relaxed">
               30 minutes. We'll map out exactly which parts of your workflow can be automated
               and what it's worth. No pitch. No commitment.
             </p>
@@ -79,7 +79,7 @@ const AuditForm = () => {
         {/* Right: form */}
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <div>
-            <label className="block text-xs text-[#3a3a3a] tracking-wide mb-2">Full name</label>
+            <label className="block text-xs text-[#7a7a7a] tracking-wide mb-2">Full name</label>
             <input
               name="name"
               type="text"
@@ -91,7 +91,7 @@ const AuditForm = () => {
             />
           </div>
           <div>
-            <label className="block text-xs text-[#3a3a3a] tracking-wide mb-2">Work email</label>
+            <label className="block text-xs text-[#7a7a7a] tracking-wide mb-2">Work email</label>
             <input
               name="email"
               type="email"
@@ -103,7 +103,7 @@ const AuditForm = () => {
             />
           </div>
           <div>
-            <label className="block text-xs text-[#3a3a3a] tracking-wide mb-2">Company</label>
+            <label className="block text-xs text-[#7a7a7a] tracking-wide mb-2">Company</label>
             <input
               name="company"
               type="text"
@@ -121,7 +121,7 @@ const AuditForm = () => {
           >
             {isSubmitting ? 'Sending…' : 'Book free audit →'}
           </button>
-          <p className="text-xs text-[#2e2e2e] text-center">
+          <p className="text-xs text-[#5a5a5a] text-center">
             No spam. Your details stay with us.
           </p>
         </form>

@@ -8,7 +8,7 @@ const Footer = () => {
           className="h-6 w-auto"
           style={{ filter: 'brightness(0) invert(0.35)' }}
         />
-        <div className="flex flex-wrap items-center gap-6 text-xs text-[#2e2e2e]">
+        <div className="flex flex-wrap items-center gap-6 text-xs text-[#5a5a5a]">
           <a
             href="mailto:hello@streamlineflo.com"
             className="hover:text-[#5a5a5a] transition-colors"

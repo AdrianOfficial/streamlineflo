@@ -38,7 +38,7 @@ const Hero = () => {
 
         {/* Sub-row: description left, CTA right */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 border-t border-[#1e1e1e] pt-8">
-          <p className="text-[#5a5a5a] text-base leading-relaxed max-w-xs">
+          <p className="text-[#9a9a9a] text-base leading-relaxed max-w-xs">
             We build custom workflow automation for businesses that have outgrown doing things manually.
           </p>
           <button
