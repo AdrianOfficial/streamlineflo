@@ -2,25 +2,25 @@ const steps = [
   {
     num: '01',
     title: 'Discovery call',
-    body: 'We spend 30 minutes understanding your current workflows, the tools you use, and where time is being lost. No prep needed on your end.',
+    body: '30 minutes. You walk us through what your team does. We identify where time is going. No prep needed.',
     detail: '30 min — free, no commitment',
   },
   {
     num: '02',
     title: 'Automation blueprint',
-    body: 'We map out exactly what can be automated, what it will cost, and what you stand to gain — delivered as a clear written plan before any work begins.',
+    body: 'We map what\'s automatable, estimate the return, and write it up as a clear plan — before any code gets written.',
     detail: 'Delivered within 48 hours',
   },
   {
     num: '03',
     title: 'Build & test',
-    body: 'We build your automations in a staging environment, test every edge case, and only move to production when everything works exactly as expected.',
+    body: 'Everything is built in staging and tested edge-case by edge-case. We push to production when it\'s solid.',
     detail: 'Typically 1–3 weeks',
   },
   {
     num: '04',
     title: 'Handover & support',
-    body: 'You get full documentation, a walkthrough of everything we built, and ongoing support to keep your systems running as your business evolves.',
+    body: 'Full docs, a walkthrough, and ongoing support. If something breaks or your tools change, we handle it.',
     detail: 'Ongoing — no lock-in',
   },
 ];
@@ -33,21 +33,16 @@ const HowItWorks = () => {
           <p className="text-xs text-[#5a5a5a] tracking-[0.25em] uppercase mb-5">How it works</p>
           <h2
             className="text-[#f0f0f0] font-black"
-            style={{
-              fontSize: 'clamp(2rem, 3.5vw, 3.2rem)',
-              lineHeight: 1.0,
-              letterSpacing: '-0.04em',
-            }}
+            style={{ fontSize: 'clamp(2rem, 3.5vw, 3.2rem)', lineHeight: 1.0, letterSpacing: '-0.04em' }}
           >
             From conversation<br />to live automation.
           </h2>
         </div>
         <p className="text-[#7a7a7a] text-base leading-relaxed max-w-sm">
-          A straightforward process with no surprises — you'll know exactly what's happening at every stage.
+          Four steps. No surprises. You know what's happening at every stage.
         </p>
       </div>
 
-      {/* Steps */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-[#181818]">
         {steps.map((s) => (
           <div key={s.num} className="bg-[#0b0b0b] p-8 flex flex-col justify-between min-h-[280px]">
@@ -59,7 +54,6 @@ const HowItWorks = () => {
                 >
                   {s.num}
                 </span>
-                {/* Connecting arrow — not on last */}
                 {s.num !== '04' && (
                   <svg width="28" height="12" viewBox="0 0 28 12" fill="none" className="hidden lg:block">
                     <line x1="0" y1="6" x2="22" y2="6" stroke="#2a2a2a" strokeWidth="1" />
@@ -67,10 +61,7 @@ const HowItWorks = () => {
                   </svg>
                 )}
               </div>
-              <h3
-                className="text-[#d8d8d8] font-bold mb-4"
-                style={{ fontSize: '1.2rem', letterSpacing: '-0.02em' }}
-              >
+              <h3 className="text-[#d8d8d8] font-bold mb-4" style={{ fontSize: '1.2rem', letterSpacing: '-0.02em' }}>
                 {s.title}
               </h3>
               <p className="text-[#7a7a7a] text-base leading-relaxed">{s.body}</p>

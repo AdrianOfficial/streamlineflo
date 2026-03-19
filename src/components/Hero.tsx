@@ -132,7 +132,7 @@ const Hero = () => {
             robot work.
           </h1>
           <p className="text-[#9a9a9a] text-lg leading-relaxed max-w-md mb-10">
-            We build custom automation systems that handle your repetitive processes — so your team can focus on work that actually moves the business forward.
+            We build automation that replaces the manual work your team keeps doing by hand. Less overhead. More output.
           </p>
           <div className="flex flex-col sm:flex-row items-start gap-4 border-t border-[#1e1e1e] pt-8">
             <button

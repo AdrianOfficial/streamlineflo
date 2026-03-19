@@ -1,24 +1,21 @@
 const testimonials = [
   {
-    quote:
-      "We were spending three days a week on manual reporting across three different tools. StreamlineFlo automated the entire thing. Now it just happens — every Monday morning, no one touches it.",
+    quote: "Reporting used to take us three days. Now it runs itself every Monday. No one touches it.",
     name: 'Sarah M.',
     role: 'Head of Operations',
-    company: 'Logistics & fulfilment firm',
+    company: 'Logistics firm',
   },
   {
-    quote:
-      "I was sceptical about the ROI before the audit. They showed me exactly where we were losing time and put a number on it. Six weeks later, those processes don't exist anymore.",
+    quote: "They showed us exactly where we were losing time and put a number on it. Six weeks later, those processes are gone.",
     name: 'James T.',
     role: 'Founder & CEO',
-    company: 'B2B SaaS company',
+    company: 'B2B SaaS',
   },
   {
-    quote:
-      "What I appreciated most was that they didn't just build something and disappear. The documentation was thorough, and when our CRM changed their API, they had it fixed before we even noticed.",
+    quote: "When our CRM changed its API they had it fixed before we even noticed something was different.",
     name: 'Priya K.',
-    role: 'Director of Revenue Operations',
-    company: 'Professional services firm',
+    role: 'Director of RevOps',
+    company: 'Professional services',
   },
 ];
 
@@ -29,13 +26,9 @@ const Testimonials = () => {
         <p className="text-xs text-[#5a5a5a] tracking-[0.25em] uppercase mb-5">Client results</p>
         <h2
           className="text-[#f0f0f0] font-black"
-          style={{
-            fontSize: 'clamp(2rem, 3.5vw, 3.2rem)',
-            lineHeight: 1.0,
-            letterSpacing: '-0.04em',
-          }}
+          style={{ fontSize: 'clamp(2rem, 3.5vw, 3.2rem)', lineHeight: 1.0, letterSpacing: '-0.04em' }}
         >
-          What our clients say.
+          Don't take our word for it.
         </h2>
       </div>
 
@@ -43,16 +36,14 @@ const Testimonials = () => {
         {testimonials.map((t) => (
           <div key={t.name} className="bg-[#0e0e0e] p-8 flex flex-col justify-between">
             <div>
-              {/* Quote mark */}
-              <svg width="28" height="20" viewBox="0 0 28 20" fill="none" className="mb-6" aria-hidden="true">
-                <path d="M0 20V12C0 5.373 3.582 1.56 10.746 0l1.254 2C8.36 3.12 6.4 5.787 6 10h4v10H0zm16 0V12C16 5.373 19.582 1.56 26.746 0L28 2c-3.64 1.12-5.6 3.787-6 8h4v10H16z" fill="#2a2a2a" />
+              <svg width="24" height="18" viewBox="0 0 24 18" fill="none" className="mb-6" aria-hidden="true">
+                <path d="M0 18V11C0 4.9 3.1 1.4 9.3 0l1.1 1.8C7.2 2.8 5.5 5.1 5.2 9H9v9H0zm13 0V11C13 4.9 16.1 1.4 22.3 0L23.4 1.8C20.2 2.8 18.5 5.1 18.2 9H22v9H13z" fill="#222" />
               </svg>
-              <p className="text-[#9a9a9a] text-base leading-relaxed mb-8">{t.quote}</p>
+              <p className="text-[#9a9a9a] text-lg leading-relaxed mb-8">{t.quote}</p>
             </div>
             <div className="border-t border-[#181818] pt-6">
               <p className="text-[#d0d0d0] font-semibold text-base">{t.name}</p>
-              <p className="text-[#5a5a5a] text-sm mt-1">{t.role}</p>
-              <p className="text-[#3a3a3a] text-sm">{t.company}</p>
+              <p className="text-[#5a5a5a] text-sm mt-1">{t.role} · {t.company}</p>
             </div>
           </div>
         ))}
