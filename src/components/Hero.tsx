@@ -48,12 +48,18 @@ const FlowIllustration = () => (
     <text x="415" y="260" textAnchor="middle" fill="#4a4a4a" fontSize="8" fontFamily="Inter Tight" letterSpacing="1.5">LOG</text>
     <text x="415" y="276" textAnchor="middle" fill="#8a8a8a" fontSize="11" fontFamily="Inter Tight" fontWeight="500">Update Sheet</text>
 
-    {/* Connector lines */}
+    {/* Connector lines — endpoints hit exact node-edge centers */}
+    {/* Node1(right:140,cy:106) → Node2(left:200,cy:86) */}
     <line x1="140" y1="106" x2="200" y2="86" stroke="#222" strokeWidth="0.75" strokeDasharray="4 4" />
+    {/* Node1(right:140,cy:106) → Node3(left:200,cy:166) */}
     <line x1="140" y1="106" x2="200" y2="166" stroke="#222" strokeWidth="0.75" strokeDasharray="4 4" />
-    <line x1="300" y1="86" x2="360" y2="120" stroke="#222" strokeWidth="0.75" strokeDasharray="4 4" />
-    <line x1="300" y1="166" x2="360" y2="130" stroke="#222" strokeWidth="0.75" strokeDasharray="4 4" />
+    {/* Node2(right:300,cy:86) → Node4(left:360,cy:126) */}
+    <line x1="300" y1="86" x2="360" y2="126" stroke="#222" strokeWidth="0.75" strokeDasharray="4 4" />
+    {/* Node3(right:300,cy:166) → Node4(left:360,cy:126) */}
+    <line x1="300" y1="166" x2="360" y2="126" stroke="#222" strokeWidth="0.75" strokeDasharray="4 4" />
+    {/* Node5(right:140,cy:266) → Node6(left:200,cy:266) */}
     <line x1="140" y1="266" x2="200" y2="266" stroke="#222" strokeWidth="0.75" strokeDasharray="4 4" />
+    {/* Node6(right:300,cy:266) → Node7(left:360,cy:266) */}
     <line x1="300" y1="266" x2="360" y2="266" stroke="#222" strokeWidth="0.75" strokeDasharray="4 4" />
 
     {/* Highlight node */}
@@ -64,10 +70,10 @@ const FlowIllustration = () => (
     <circle cx="216" cy="349" r="3.5" fill="#4ade80" opacity="0.8" />
     <circle cx="216" cy="349" r="6" fill="#4ade80" opacity="0.1" />
 
-    {/* Arrow heads */}
-    <polygon points="200,84 193,80 193,88" fill="#222" />
-    <polygon points="200,164 193,160 193,168" fill="#222" />
-    <polygon points="360,118 353,114 353,122" fill="#222" />
+    {/* Arrow heads — tip exactly on destination left edge, base 7px back */}
+    <polygon points="200,86 193,82 193,90" fill="#222" />
+    <polygon points="200,166 193,162 193,170" fill="#222" />
+    <polygon points="360,126 353,122 353,130" fill="#222" />
     <polygon points="200,266 193,262 193,270" fill="#222" />
     <polygon points="360,266 353,262 353,270" fill="#222" />
   </svg>
