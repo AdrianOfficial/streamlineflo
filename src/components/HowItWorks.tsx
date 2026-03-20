@@ -27,47 +27,47 @@ const steps = [
 
 const HowItWorks = () => {
   return (
-    <section id="how-it-works" className="bg-[#0b0b0b] border-t border-[#1e1e1e] px-8 lg:px-14 py-24">
+    <section id="how-it-works" className="bg-[#0b0b0b] border-t border-[#1a1a1a] px-8 lg:px-14 py-24">
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
         <div>
-          <p className="text-xs text-[#5a5a5a] tracking-[0.25em] uppercase mb-5">How it works</p>
+          <p className="text-xs text-[#4a4a4a] tracking-[0.2em] uppercase mb-5">How it works</p>
           <h2
-            className="text-[#f0f0f0] font-black"
-            style={{ fontSize: 'clamp(2rem, 3.5vw, 3.2rem)', lineHeight: 1.0, letterSpacing: '-0.04em' }}
+            className="text-[#f0f0f0] font-semibold"
+            style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', lineHeight: 1.05, letterSpacing: '-0.035em' }}
           >
             From conversation<br />to live automation.
           </h2>
         </div>
-        <p className="text-[#7a7a7a] text-base leading-relaxed max-w-sm">
+        <p className="text-[#6a6a6a] text-sm leading-relaxed max-w-sm">
           Four steps. No surprises. You know what's happening at every stage.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-[#181818]">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-[#151515]">
         {steps.map((s) => (
-          <div key={s.num} className="bg-[#0b0b0b] p-8 flex flex-col justify-between min-h-[280px]">
+          <div key={s.num} className="bg-[#0b0b0b] p-8 flex flex-col justify-between min-h-[260px]">
             <div>
               <div className="flex items-center justify-between mb-8">
                 <span
-                  className="text-[#1e1e1e] font-black"
-                  style={{ fontSize: '4rem', letterSpacing: '-0.05em', lineHeight: 1 }}
+                  className="text-[#181818] font-semibold"
+                  style={{ fontSize: '3.5rem', letterSpacing: '-0.04em', lineHeight: 1 }}
                 >
                   {s.num}
                 </span>
                 {s.num !== '04' && (
-                  <svg width="28" height="12" viewBox="0 0 28 12" fill="none" className="hidden lg:block">
-                    <line x1="0" y1="6" x2="22" y2="6" stroke="#2a2a2a" strokeWidth="1" />
-                    <polyline points="18,2 24,6 18,10" stroke="#2a2a2a" strokeWidth="1" fill="none" />
+                  <svg width="24" height="10" viewBox="0 0 24 10" fill="none" className="hidden lg:block">
+                    <line x1="0" y1="5" x2="18" y2="5" stroke="#222" strokeWidth="0.75" />
+                    <polyline points="15,2 20,5 15,8" stroke="#222" strokeWidth="0.75" fill="none" />
                   </svg>
                 )}
               </div>
-              <h3 className="text-[#d8d8d8] font-bold mb-4" style={{ fontSize: '1.2rem', letterSpacing: '-0.02em' }}>
+              <h3 className="text-[#c0c0c0] font-medium mb-3" style={{ fontSize: '1.05rem', letterSpacing: '-0.01em' }}>
                 {s.title}
               </h3>
-              <p className="text-[#7a7a7a] text-base leading-relaxed">{s.body}</p>
+              <p className="text-[#6a6a6a] text-sm leading-relaxed">{s.body}</p>
             </div>
-            <div className="mt-8 pt-6 border-t border-[#181818]">
-              <span className="text-xs text-[#4a4a4a] tracking-wide">{s.detail}</span>
+            <div className="mt-8 pt-5 border-t border-[#161616]">
+              <span className="text-xs text-[#3a3a3a] tracking-wide">{s.detail}</span>
             </div>
           </div>
         ))}

@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="bg-[#0e0e0e] border-t border-[#1e1e1e] px-8 lg:px-14 py-6">
+    <footer className="bg-[#0e0e0e] border-t border-[#1a1a1a] px-8 lg:px-14 py-6">
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
         <img
           src="/logo.png"
@@ -8,10 +8,10 @@ const Footer = () => {
           className="h-6 w-auto"
           style={{ filter: 'brightness(0) invert(0.35)' }}
         />
-        <div className="flex flex-wrap items-center gap-6 text-xs text-[#5a5a5a]">
+        <div className="flex flex-wrap items-center gap-6 text-xs text-[#3a3a3a]">
           <a
             href="mailto:hello@streamlineflo.com"
-            className="hover:text-[#5a5a5a] transition-colors"
+            className="hover:text-[#6a6a6a] transition-colors"
           >
             hello@streamlineflo.com
           </a>
@@ -19,7 +19,7 @@ const Footer = () => {
             href="https://www.linkedin.com/in/adrian-zaporojan-9358642a9/"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-[#5a5a5a] transition-colors"
+            className="hover:text-[#6a6a6a] transition-colors"
           >
             LinkedIn
           </a>

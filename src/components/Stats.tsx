@@ -7,17 +7,17 @@ const stats = [
 
 const Stats = () => {
   return (
-    <section className="bg-[#0e0e0e] border-t border-[#1e1e1e]">
+    <section className="bg-[#0e0e0e] border-t border-[#1a1a1a]">
       <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-y lg:divide-y-0 divide-[#1a1a1a]">
         {stats.map((s) => (
           <div key={s.label} className="px-10 py-12">
             <p
-              className="text-[#f0f0f0] font-black mb-2 leading-none"
-              style={{ fontSize: 'clamp(2.6rem, 4vw, 3.8rem)', letterSpacing: '-0.04em' }}
+              className="text-[#e8e8e8] font-semibold mb-2 leading-none"
+              style={{ fontSize: 'clamp(2.4rem, 3.5vw, 3.2rem)', letterSpacing: '-0.03em' }}
             >
               {s.value}
             </p>
-            <p className="text-[#6a6a6a] text-base mt-3">{s.label}</p>
+            <p className="text-[#5a5a5a] text-sm mt-3">{s.label}</p>
           </div>
         ))}
       </div>
