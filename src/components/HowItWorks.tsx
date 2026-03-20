@@ -38,7 +38,7 @@ const HowItWorks = () => {
             From conversation<br />to live automation.
           </h2>
         </div>
-        <p className="text-[#6a6a6a] text-sm leading-relaxed max-w-sm">
+        <p className="text-[#6a6a6a] text-base leading-relaxed max-w-sm">
           Four steps. No surprises. You know what's happening at every stage.
         </p>
       </div>
@@ -61,10 +61,10 @@ const HowItWorks = () => {
                   </svg>
                 )}
               </div>
-              <h3 className="text-[#c0c0c0] font-medium mb-3" style={{ fontSize: '1.05rem', letterSpacing: '-0.01em' }}>
+              <h3 className="text-[#c0c0c0] font-medium mb-3" style={{ fontSize: '1.1rem', letterSpacing: '-0.01em' }}>
                 {s.title}
               </h3>
-              <p className="text-[#6a6a6a] text-sm leading-relaxed">{s.body}</p>
+              <p className="text-[#6a6a6a] text-base leading-relaxed">{s.body}</p>
             </div>
             <div className="mt-8 pt-5 border-t border-[#161616]">
               <span className="text-xs text-[#3a3a3a] tracking-wide">{s.detail}</span>

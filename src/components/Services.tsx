@@ -94,7 +94,7 @@ const Services = () => {
             Everything you need<br />to run on autopilot.
           </h2>
         </div>
-        <p className="text-[#6a6a6a] text-sm leading-relaxed max-w-xs">
+        <p className="text-[#6a6a6a] text-base leading-relaxed max-w-xs">
           We build for your stack, not a template. No licences to sell you.
         </p>
       </div>
@@ -110,9 +110,9 @@ const Services = () => {
             <div className="flex items-start gap-4 md:w-64 flex-shrink-0">
               <span className="text-xs text-[#2a2a2a] font-mono mt-1 w-5 flex-shrink-0">{s.num}</span>
               <div className="mt-0.5 flex-shrink-0">{s.icon}</div>
-              <h3 className="text-[#c0c0c0] font-medium text-sm leading-snug">{s.title}</h3>
+              <h3 className="text-[#c0c0c0] font-medium text-base leading-snug">{s.title}</h3>
             </div>
-            <p className="text-[#7a7a7a] text-sm leading-relaxed max-w-xl flex-1">{s.description}</p>
+            <p className="text-[#7a7a7a] text-base leading-relaxed max-w-xl flex-1">{s.description}</p>
             <div className="flex flex-wrap gap-2 md:w-52 flex-shrink-0 md:justify-end items-start">
               {s.tags.map((tag) => (
                 <span key={tag} className="text-xs text-[#3a3a3a] border border-[#1a1a1a] px-2.5 py-1 whitespace-nowrap">
