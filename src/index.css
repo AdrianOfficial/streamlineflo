@@ -31,14 +31,17 @@
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
+  * { @apply border-border; }
 
   html {
     background-color: #f8f8f6;
     font-size: 18px;
+    /* Hide default cursor on non-touch devices */
+    cursor: none;
   }
+
+  /* Restore cursor inside iframes / embeds */
+  iframe { cursor: auto; }
 
   body {
     background-color: #f8f8f6;
@@ -46,6 +49,19 @@
     font-family: 'Inter Tight', 'Inter', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     font-weight: 400;
+    /* Hide cursor on interactive children too */
+    cursor: none;
+  }
+
+  /* Restore normal cursor on touch devices */
+  @media (pointer: coarse) {
+    html, body, a, button, input, textarea, [role="button"] {
+      cursor: auto !important;
+    }
+  }
+
+  a, button, input, textarea, [role="button"], label {
+    cursor: none;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -53,4 +69,111 @@
     letter-spacing: -0.03em;
     color: #0a0a0a;
   }
+}
+
+/* ── Custom Cursor ─────────────────────────────────────────────────────────── */
+
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  will-change: transform;
+  border-radius: 50%;
+}
+
+/* Small solid dot — snappy, follows exactly */
+.cursor-dot {
+  width: 7px;
+  height: 7px;
+  background: #111;
+  transition: opacity 0.2s, transform 0.15s, width 0.2s, height 0.2s, background 0.2s;
+  mix-blend-mode: normal;
+}
+
+/* Larger hollow ring — lags behind */
+.cursor-ring {
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid rgba(30, 30, 30, 0.35);
+  background: transparent;
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              height 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s,
+              background 0.3s,
+              opacity 0.2s;
+}
+
+/* Hover: dot shrinks + disappears, ring expands and fills softly */
+.cursor-dot.cursor--hover {
+  width: 5px;
+  height: 5px;
+  opacity: 0;
+}
+
+.cursor-ring.cursor--hover {
+  width: 52px;
+  height: 52px;
+  border-color: rgba(30, 30, 30, 0.55);
+  background: rgba(30, 30, 30, 0.04);
+}
+
+/* Input hover: ring becomes a thin underline-style pill */
+.cursor-ring.cursor--input {
+  width: 3px;
+  height: 24px;
+  border-radius: 2px;
+  border-color: #111;
+  background: #111;
+  opacity: 0.6;
+}
+
+/* ── Hero entrance animation ───────────────────────────────────────────────── */
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-enter {
+  opacity: 0;
+  animation: heroFadeUp 0.82s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: var(--delay, 0ms);
+}
+
+/* ── Magnetic button effect ────────────────────────────────────────────────── */
+
+.magnetic {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s;
+}
+
+/* ── Hover line on service rows ────────────────────────────────────────────── */
+.service-row {
+  transition: background 0.2s;
+}
+.service-row:hover {
+  background: rgba(0,0,0,0.015);
+}
+
+/* ── Testimonial card hover ────────────────────────────────────────────────── */
+.testimonial-card {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px -8px rgba(0,0,0,0.08);
+}
+
+/* ── Smooth scroll ─────────────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
 }

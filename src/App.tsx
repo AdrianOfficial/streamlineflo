@@ -7,16 +7,18 @@ import { HelmetProvider } from "react-helmet-async";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import N8nChat from "./components/N8nChat";
+import CustomCursor from "./components/CustomCursor";
 
 const queryClient = new QueryClient();
 
 const App = () => {
-  const showChatbot = false; // toggle chatbot on/off
+  const showChatbot = false;
 
   return (
     <QueryClientProvider client={queryClient}>
       <HelmetProvider>
         <TooltipProvider>
+          <CustomCursor />
           <Toaster />
           <Sonner />
           <BrowserRouter>
@@ -26,7 +28,6 @@ const App = () => {
             </Routes>
           </BrowserRouter>
 
-          {/* Conditional render */}
           {showChatbot && (
             <N8nChat
               webhookUrl="https://jeffzeb12.app.n8n.cloud/webhook/c803253c-f26b-4a80-83a5-53fad70dbdb6/chat"
