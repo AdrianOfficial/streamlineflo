@@ -21,28 +21,28 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="bg-[#0e0e0e] border-t border-[#1a1a1a] px-8 lg:px-16 py-28">
+    <section className="bg-[#f0f0ee] border-t border-[#e8e8e6] px-8 lg:px-16 py-28">
       <div className="mb-16">
         <p className="text-sm text-[#999] tracking-[0.2em] uppercase mb-5">Client results</p>
         <h2
-          className="text-[#f0f0f0] font-semibold"
+          className="font-semibold text-[#0a0a0a]"
           style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', lineHeight: 1.05, letterSpacing: '-0.035em' }}
         >
           Don't take our word for it.
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#151515]">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {testimonials.map((t) => (
-          <div key={t.name} className="bg-[#0e0e0e] p-10 flex flex-col justify-between">
+          <div key={t.name} className="bg-[#f8f8f6] border border-[#e8e8e6] p-10 flex flex-col justify-between">
             <div>
-              <svg width="24" height="20" viewBox="0 0 22 18" fill="none" className="mb-8" aria-hidden="true">
-                <path d="M0 18V10.5C0 4.6 2.9 1.3 8.7 0l1 1.7C6.7 2.7 5.1 4.8 4.9 8.5H8.5V18H0zm12 0V10.5C12 4.6 14.9 1.3 20.7 0l1 1.7c-3 1-4.6 3.1-4.8 6.8H20.5V18H12z" fill="#252525" />
+              <svg width="28" height="22" viewBox="0 0 28 22" fill="none" className="mb-8" aria-hidden="true">
+                <path d="M0 22V13C0 5.6 3.5 1.5 10.5 0l1.2 2C8 3.4 6 6.1 5.8 10.5H10V22H0zm16 0V13C16 5.6 19.5 1.5 26.5 0l1.2 2c-3.7 1.4-5.7 4.1-5.9 8.5H26V22H16z" fill="#e8e8e6" />
               </svg>
-              <p className="text-[#d0d0d0] text-2xl leading-relaxed mb-10">{t.quote}</p>
+              <p className="text-[#222] text-2xl leading-relaxed mb-10">{t.quote}</p>
             </div>
-            <div className="border-t border-[#1a1a1a] pt-6">
-              <p className="text-[#e0e0e0] font-medium text-lg">{t.name}</p>
+            <div className="border-t border-[#e8e8e6] pt-6">
+              <p className="text-[#111] font-medium text-lg">{t.name}</p>
               <p className="text-[#888] text-base mt-1">{t.role} · {t.company}</p>
             </div>
           </div>
