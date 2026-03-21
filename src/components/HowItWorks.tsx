@@ -1,3 +1,5 @@
+import Reveal from './Reveal';
+
 const steps = [
   {
     num: '01',
@@ -25,10 +27,10 @@ const steps = [
   },
 ];
 
-const HowItWorks = () => {
-  return (
-    <section id="how-it-works" className="bg-[#f8f8f6] border-t border-[#e8e8e6] px-8 lg:px-16 py-28">
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
+const HowItWorks = () => (
+  <section id="how-it-works" className="bg-[#f8f8f6] border-t border-[#e8e8e6] px-8 lg:px-16 py-28">
+    <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
+      <Reveal>
         <div>
           <p className="text-sm text-[#999] tracking-[0.2em] uppercase mb-5">How it works</p>
           <h2
@@ -38,20 +40,27 @@ const HowItWorks = () => {
             From conversation<br />to live automation.
           </h2>
         </div>
+      </Reveal>
+      <Reveal delay={80}>
         <p className="text-[#555] text-xl leading-relaxed max-w-sm">
           Four steps. No surprises. You know what's happening at every stage.
         </p>
-      </div>
+      </Reveal>
+    </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-[#e8e8e6]">
-        {steps.map((s) => (
-          <div key={s.num} className="bg-[#f8f8f6] p-10 flex flex-col justify-between min-h-[300px]">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-[#e8e8e6]">
+      {steps.map((s, i) => (
+        <Reveal key={s.num} delay={i * 80} className="bg-[#f8f8f6]">
+          <div className="p-10 flex flex-col justify-between min-h-[300px]">
             <div>
               <div className="flex items-center justify-between mb-8">
-                <span className="font-semibold text-[#e0e0de]" style={{ fontSize: '4rem', letterSpacing: '-0.04em', lineHeight: 1 }}>
+                <span
+                  className="font-semibold text-[#e0e0de]"
+                  style={{ fontSize: '4rem', letterSpacing: '-0.04em', lineHeight: 1 }}
+                >
                   {s.num}
                 </span>
-                {s.num !== '04' && (
+                {i !== steps.length - 1 && (
                   <svg width="28" height="12" viewBox="0 0 28 12" fill="none" className="hidden lg:block">
                     <line x1="0" y1="6" x2="22" y2="6" stroke="#ccc" strokeWidth="1" />
                     <polyline points="18,3 23,6 18,9" stroke="#ccc" strokeWidth="1" fill="none" />
@@ -65,10 +74,10 @@ const HowItWorks = () => {
               <span className="text-base text-[#999] tracking-wide">{s.detail}</span>
             </div>
           </div>
-        ))}
-      </div>
-    </section>
-  );
-};
+        </Reveal>
+      ))}
+    </div>
+  </section>
+);
 
 export default HowItWorks;
