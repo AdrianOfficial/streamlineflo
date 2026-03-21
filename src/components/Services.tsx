@@ -45,7 +45,7 @@ const services = [
   {
     num: '01', icon: <AiIcon />,
     title: 'AI Process Automation',
-    description: 'Routing, classification, approvals, data extraction — let an LLM handle the decisions your team makes on autopilot anyway.',
+    description: 'Routing, classification, approvals, data extraction. Let an LLM handle the decisions your team makes on autopilot anyway.',
     tags: ['LLM workflows', 'Decision logic', 'Auto-classification'],
   },
   {
@@ -69,7 +69,7 @@ const services = [
   {
     num: '05', icon: <CodeIcon />,
     title: 'Custom Development',
-    description: "When off-the-shelf tools don't fit — bespoke builds around your legacy systems and internal logic.",
+    description: "When off-the-shelf tools don't fit. Bespoke builds around your legacy systems and internal logic.",
     tags: ['Legacy systems', 'Custom APIs', 'Internal tools'],
   },
 ];

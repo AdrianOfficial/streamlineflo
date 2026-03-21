@@ -54,7 +54,7 @@ const Problem = () => (
         <Reveal delay={160}>
           <p className="text-[#555] text-xl leading-relaxed mb-12">
             It's invisible until it isn't. A 10-person team losing 12 hours each is 120 hours a week
-            — three full-time roles doing zero-value work.
+            three full-time roles doing zero-value work.
           </p>
         </Reveal>
         <Reveal delay={200}>
@@ -62,7 +62,7 @@ const Problem = () => (
             <p className="text-[#333] text-xl leading-relaxed italic">
               "We didn't realise how much time we were losing until we stopped losing it."
             </p>
-            <p className="text-[#999] text-base mt-3">— Operations Director, logistics firm</p>
+            <p className="text-[#999] text-base mt-3">Operations Director, logistics firm</p>
           </div>
         </Reveal>
       </div>
