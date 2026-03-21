@@ -45,7 +45,7 @@ const AuditForm = () => {
   };
 
   const inputClass =
-    'w-full bg-[#0e0e0e] border border-[#1e1e1e] text-[#e0e0e0] placeholder-[#2e2e2e] px-4 py-3.5 text-sm focus:border-[#3a3a3a] focus:outline-none transition-colors';
+    'w-full bg-[#0e0e0e] border border-[#252525] text-[#e0e0e0] placeholder-[#444] px-4 py-3.5 text-base focus:border-[#555] focus:outline-none transition-colors';
 
   return (
     <section
@@ -56,7 +56,7 @@ const AuditForm = () => {
         {/* Left */}
         <div className="flex flex-col justify-between gap-10">
           <div>
-            <p className="text-xs text-[#4a4a4a] tracking-[0.2em] uppercase mb-6">
+            <p className="text-xs text-[#666] tracking-[0.2em] uppercase mb-6">
               Free Audit
             </p>
             <h2
@@ -77,9 +77,9 @@ const AuditForm = () => {
                 <div key={item} className="flex items-center gap-3">
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                     <circle cx="8" cy="8" r="7" stroke="#222" strokeWidth="0.75" />
-                    <polyline points="5,8 7,10.5 11,6" stroke="#4a4a4a" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
+                    <polyline points="5,8 7,10.5 11,6" stroke="#666" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                  <span className="text-[#7a7a7a] text-base">{item}</span>
+                  <span className="text-[#9a9a9a] text-base">{item}</span>
                 </div>
               ))}
             </div>
@@ -89,7 +89,7 @@ const AuditForm = () => {
         {/* Right: form */}
         <form onSubmit={handleSubmit} className="flex flex-col gap-5">
           <div>
-            <label className="block text-sm text-[#7a7a7a] mb-2">Full name</label>
+            <label className="block text-sm text-[#9a9a9a] mb-2">Full name</label>
             <input
               name="name"
               type="text"
@@ -101,7 +101,7 @@ const AuditForm = () => {
             />
           </div>
           <div>
-            <label className="block text-sm text-[#7a7a7a] mb-2">Work email</label>
+            <label className="block text-sm text-[#9a9a9a] mb-2">Work email</label>
             <input
               name="email"
               type="email"
@@ -113,7 +113,7 @@ const AuditForm = () => {
             />
           </div>
           <div>
-            <label className="block text-sm text-[#7a7a7a] mb-2">Company</label>
+            <label className="block text-sm text-[#9a9a9a] mb-2">Company</label>
             <input
               name="company"
               type="text"
@@ -127,11 +127,11 @@ const AuditForm = () => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="mt-2 w-full bg-[#e8e8e8] text-[#0e0e0e] text-sm font-medium py-3.5 hover:bg-[#f5f5f5] transition-colors disabled:opacity-40"
+            className="mt-2 w-full bg-[#e8e8e8] text-[#0e0e0e] text-base font-medium py-3.5 hover:bg-[#f5f5f5] transition-colors disabled:opacity-40"
           >
             {isSubmitting ? 'Sending…' : 'Book free audit →'}
           </button>
-          <p className="text-sm text-[#4a4a4a] text-center">
+          <p className="text-sm text-[#666] text-center">
             No spam. Your details stay with us.
           </p>
         </form>
