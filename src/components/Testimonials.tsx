@@ -23,7 +23,7 @@ const Testimonials = () => {
   return (
     <section className="bg-[#0e0e0e] border-t border-[#1a1a1a] px-8 lg:px-14 py-24">
       <div className="mb-16">
-        <p className="text-xs text-[#4a4a4a] tracking-[0.2em] uppercase mb-5">Client results</p>
+        <p className="text-xs text-[#666] tracking-[0.2em] uppercase mb-5">Client results</p>
         <h2
           className="text-[#f0f0f0] font-semibold"
           style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', lineHeight: 1.05, letterSpacing: '-0.035em' }}
@@ -39,11 +39,11 @@ const Testimonials = () => {
               <svg width="20" height="16" viewBox="0 0 20 16" fill="none" className="mb-6" aria-hidden="true">
                 <path d="M0 16V9.5C0 4.2 2.6 1.2 7.8 0l.9 1.5C6 2.4 4.6 4.3 4.4 7.5H7.5V16H0zm10.5 0V9.5C10.5 4.2 13.1 1.2 18.3 0l.9 1.5C16.5 2.4 15.1 4.3 14.9 7.5H18V16H10.5z" fill="#1a1a1a" />
               </svg>
-              <p className="text-[#8a8a8a] text-lg leading-relaxed mb-8">{t.quote}</p>
+              <p className="text-[#aaa] text-lg leading-relaxed mb-8">{t.quote}</p>
             </div>
             <div className="border-t border-[#161616] pt-5">
               <p className="text-[#b0b0b0] font-medium text-base">{t.name}</p>
-              <p className="text-[#4a4a4a] text-sm mt-1">{t.role} · {t.company}</p>
+              <p className="text-[#666] text-sm mt-1">{t.role} · {t.company}</p>
             </div>
           </div>
         ))}
