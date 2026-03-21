@@ -52,14 +52,14 @@ const AuditForm = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-28">
         <div className="flex flex-col justify-between gap-10">
           <div>
-            <p className="text-sm text-[#666] tracking-[0.2em] uppercase mb-6">Free Audit</p>
+            <p className="text-sm text-[#999] tracking-[0.2em] uppercase mb-6">Free Audit</p>
             <h2
               className="text-[#f0f0f0] font-semibold mb-6"
               style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', lineHeight: 1.05, letterSpacing: '-0.035em' }}
             >
               Find out what's costing your team time.
             </h2>
-            <p className="text-[#aaa] text-xl leading-relaxed mb-8">
+            <p className="text-[#c8c8c8] text-xl leading-relaxed mb-8">
               30 minutes. We'll map out exactly which parts of your workflow can be automated and what it's worth. No pitch. No commitment.
             </p>
             <div className="flex flex-col gap-5">
@@ -69,7 +69,7 @@ const AuditForm = () => {
                     <circle cx="8" cy="8" r="7" stroke="#333" strokeWidth="0.75" />
                     <polyline points="5,8 7,10.5 11,6" stroke="#666" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                  <span className="text-[#9a9a9a] text-lg">{item}</span>
+                  <span className="text-[#c0c0c0] text-lg">{item}</span>
                 </div>
               ))}
             </div>
@@ -78,15 +78,15 @@ const AuditForm = () => {
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-5">
           <div>
-            <label className="block text-base text-[#9a9a9a] mb-2">Full name</label>
+            <label className="block text-base text-[#c0c0c0] mb-2">Full name</label>
             <input name="name" type="text" value={formData.name} onChange={handleChange} required placeholder="John Smith" className={inputClass} />
           </div>
           <div>
-            <label className="block text-base text-[#9a9a9a] mb-2">Work email</label>
+            <label className="block text-base text-[#c0c0c0] mb-2">Work email</label>
             <input name="email" type="email" value={formData.email} onChange={handleChange} required placeholder="john@company.com" className={inputClass} />
           </div>
           <div>
-            <label className="block text-base text-[#9a9a9a] mb-2">Company</label>
+            <label className="block text-base text-[#c0c0c0] mb-2">Company</label>
             <input name="company" type="text" value={formData.company} onChange={handleChange} required placeholder="Your Company" className={inputClass} />
           </div>
           <button
@@ -96,7 +96,7 @@ const AuditForm = () => {
           >
             {isSubmitting ? 'Sending…' : 'Book free audit →'}
           </button>
-          <p className="text-base text-[#555] text-center">
+          <p className="text-base text-[#888] text-center">
             No spam. Your details stay with us.
           </p>
         </form>

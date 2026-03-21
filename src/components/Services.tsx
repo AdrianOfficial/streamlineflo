@@ -86,7 +86,7 @@ const Services = () => {
     <section id="services" className="bg-[#0e0e0e] px-8 lg:px-14 py-24 border-t border-[#1a1a1a]">
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
         <div>
-          <p className="text-sm text-[#666] tracking-[0.2em] uppercase mb-5">What we do</p>
+          <p className="text-sm text-[#999] tracking-[0.2em] uppercase mb-5">What we do</p>
           <h2
             className="text-[#f0f0f0] font-semibold"
             style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', lineHeight: 1.05, letterSpacing: '-0.035em' }}
@@ -94,7 +94,7 @@ const Services = () => {
             Everything you need<br />to run on autopilot.
           </h2>
         </div>
-        <p className="text-[#888] text-lg leading-relaxed max-w-xs">
+        <p className="text-[#b8b8b8] text-lg leading-relaxed max-w-xs">
           We build for your stack, not a template. No licences to sell you.
         </p>
       </div>
@@ -108,14 +108,14 @@ const Services = () => {
             }`}
           >
             <div className="flex items-start gap-4 md:w-72 flex-shrink-0">
-              <span className="text-sm text-[#444] font-mono mt-0.5 w-6 flex-shrink-0">{s.num}</span>
+              <span className="text-sm text-[#888] font-mono mt-0.5 w-6 flex-shrink-0">{s.num}</span>
               <div className="mt-0.5 flex-shrink-0">{s.icon}</div>
               <h3 className="text-[#d0d0d0] font-medium text-lg leading-snug">{s.title}</h3>
             </div>
-            <p className="text-[#9a9a9a] text-lg leading-relaxed max-w-xl flex-1">{s.description}</p>
+            <p className="text-[#c0c0c0] text-lg leading-relaxed max-w-xl flex-1">{s.description}</p>
             <div className="flex flex-wrap gap-2 md:w-52 flex-shrink-0 md:justify-end items-start">
               {s.tags.map((tag) => (
-                <span key={tag} className="text-sm text-[#666] border border-[#252525] px-3 py-1 whitespace-nowrap">
+                <span key={tag} className="text-sm text-[#999] border border-[#252525] px-3 py-1 whitespace-nowrap">
                   {tag}
                 </span>
               ))}

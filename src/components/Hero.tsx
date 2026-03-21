@@ -71,8 +71,8 @@ const Hero = () => {
       <header className="px-8 lg:px-14 py-6 flex items-center justify-between border-b border-[#1a1a1a]">
         <img src="/logo.png" alt="StreamlineFlo" className="h-8 w-auto" style={{ filter: 'brightness(0) invert(1)' }} />
         <nav className="flex items-center gap-8">
-          <a href="#services" className="text-base text-[#666] hover:text-[#b0b0b0] transition-colors hidden md:block">Services</a>
-          <a href="#how-it-works" className="text-base text-[#666] hover:text-[#b0b0b0] transition-colors hidden md:block">How it works</a>
+          <a href="#services" className="text-base text-[#999] hover:text-[#b0b0b0] transition-colors hidden md:block">Services</a>
+          <a href="#how-it-works" className="text-base text-[#999] hover:text-[#b0b0b0] transition-colors hidden md:block">How it works</a>
           <button
             onClick={scrollToForm}
             className="text-base text-[#e0e0e0] border border-[#2a2a2a] px-5 py-2.5 hover:border-[#555] hover:bg-[#141414] transition-all"
@@ -85,7 +85,7 @@ const Hero = () => {
       <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-0">
         <div className="flex flex-col justify-end px-8 lg:px-14 pb-16 pt-16 lg:border-r border-[#1a1a1a]">
           <div className="mb-6">
-            <span className="inline-block text-xs tracking-[0.2em] text-[#555] uppercase border border-[#222] px-3 py-1.5">
+            <span className="inline-block text-xs tracking-[0.2em] text-[#888] uppercase border border-[#222] px-3 py-1.5">
               Workflow Automation
             </span>
           </div>
@@ -97,7 +97,7 @@ const Hero = () => {
             people to do<br />
             robot work.
           </h1>
-          <p className="text-[#aaa] text-xl leading-relaxed max-w-md mb-10">
+          <p className="text-[#c8c8c8] text-xl leading-relaxed max-w-md mb-10">
             We build automation that replaces the manual work your team keeps doing by hand. Less overhead. More output.
           </p>
           <div className="flex flex-col sm:flex-row items-start gap-4 border-t border-[#1a1a1a] pt-8">
@@ -107,7 +107,7 @@ const Hero = () => {
             >
               Book a free audit →
             </button>
-            <a href="#how-it-works" className="text-base text-[#666] hover:text-[#aaa] transition-colors py-4">
+            <a href="#how-it-works" className="text-base text-[#999] hover:text-[#c8c8c8] transition-colors py-4">
               See how it works
             </a>
           </div>
