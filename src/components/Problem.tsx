@@ -30,27 +30,27 @@ const CostIllustration = () => (
 
 const Problem = () => {
   return (
-    <section className="bg-[#0a0a0a] border-t border-[#1a1a1a] px-8 lg:px-14 py-24">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+    <section className="bg-[#0a0a0a] border-t border-[#1a1a1a] px-8 lg:px-16 py-28">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-28 items-center">
         <div>
           <p className="text-sm text-[#999] tracking-[0.2em] uppercase mb-8">The problem</p>
           <h2
-            className="text-[#f0f0f0] font-semibold mb-8"
+            className="text-[#f0f0f0] font-semibold mb-10"
             style={{ fontSize: 'clamp(2.2rem, 3.8vw, 3.4rem)', lineHeight: 1.05, letterSpacing: '-0.035em' }}
           >
             Manual work is<br />eating your margin.
           </h2>
-          <p className="text-[#c8c8c8] text-xl leading-relaxed mb-6">
+          <p className="text-[#c8c8c8] text-2xl leading-relaxed mb-8">
             The average employee spends 12 hours a week on tasks a machine could do. Copy-paste. Reformatting. Chasing approvals. Following up.
           </p>
-          <p className="text-[#b8b8b8] text-lg leading-relaxed mb-10">
+          <p className="text-[#b0b0b0] text-xl leading-relaxed mb-12">
             It's invisible until it isn't. A 10-person team losing 12 hours each is 120 hours a week — three full-time roles doing zero-value work.
           </p>
-          <div className="border-l border-[#252525] pl-6">
-            <p className="text-[#d0d0d0] text-lg leading-relaxed italic">
+          <div className="border-l-2 border-[#252525] pl-6">
+            <p className="text-[#d0d0d0] text-xl leading-relaxed italic">
               "We didn't realise how much time we were losing until we stopped losing it."
             </p>
-            <p className="text-[#999] text-base mt-3">— Operations Director, logistics firm</p>
+            <p className="text-[#888] text-base mt-3">— Operations Director, logistics firm</p>
           </div>
         </div>
         <div className="flex items-center justify-center">

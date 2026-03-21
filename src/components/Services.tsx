@@ -83,8 +83,8 @@ const services = [
 
 const Services = () => {
   return (
-    <section id="services" className="bg-[#0e0e0e] px-8 lg:px-14 py-24 border-t border-[#1a1a1a]">
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+    <section id="services" className="bg-[#0e0e0e] px-8 lg:px-16 py-28 border-t border-[#1a1a1a]">
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
         <div>
           <p className="text-sm text-[#999] tracking-[0.2em] uppercase mb-5">What we do</p>
           <h2
@@ -94,7 +94,7 @@ const Services = () => {
             Everything you need<br />to run on autopilot.
           </h2>
         </div>
-        <p className="text-[#b8b8b8] text-lg leading-relaxed max-w-xs">
+        <p className="text-[#b0b0b0] text-xl leading-relaxed max-w-sm">
           We build for your stack, not a template. No licences to sell you.
         </p>
       </div>
@@ -103,19 +103,19 @@ const Services = () => {
         {services.map((s, i) => (
           <div
             key={s.num}
-            className={`flex flex-col md:flex-row gap-6 md:gap-10 py-9 ${
+            className={`flex flex-col md:flex-row gap-8 md:gap-12 py-10 ${
               i !== services.length - 1 ? 'border-b border-[#1a1a1a]' : ''
             }`}
           >
-            <div className="flex items-start gap-4 md:w-72 flex-shrink-0">
-              <span className="text-sm text-[#888] font-mono mt-0.5 w-6 flex-shrink-0">{s.num}</span>
-              <div className="mt-0.5 flex-shrink-0">{s.icon}</div>
-              <h3 className="text-[#d0d0d0] font-medium text-lg leading-snug">{s.title}</h3>
+            <div className="flex items-start gap-5 md:w-80 flex-shrink-0">
+              <span className="text-base text-[#444] font-mono mt-1 w-7 flex-shrink-0">{s.num}</span>
+              <div className="mt-1 flex-shrink-0">{s.icon}</div>
+              <h3 className="text-[#e0e0e0] font-medium text-xl leading-snug">{s.title}</h3>
             </div>
-            <p className="text-[#c0c0c0] text-lg leading-relaxed max-w-xl flex-1">{s.description}</p>
-            <div className="flex flex-wrap gap-2 md:w-52 flex-shrink-0 md:justify-end items-start">
+            <p className="text-[#c0c0c0] text-xl leading-relaxed flex-1">{s.description}</p>
+            <div className="flex flex-wrap gap-2 md:w-56 flex-shrink-0 md:justify-end items-start">
               {s.tags.map((tag) => (
-                <span key={tag} className="text-sm text-[#999] border border-[#252525] px-3 py-1 whitespace-nowrap">
+                <span key={tag} className="text-base text-[#888] border border-[#252525] px-3 py-1.5 whitespace-nowrap">
                   {tag}
                 </span>
               ))}
