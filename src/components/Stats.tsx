@@ -17,7 +17,7 @@ const Stats = () => {
             >
               {s.value}
             </p>
-            <p className="text-[#888] text-base mt-3">{s.label}</p>
+            <p className="text-[#aaa] text-base mt-3">{s.label}</p>
           </div>
         ))}
       </div>

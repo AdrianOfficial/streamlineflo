@@ -30,7 +30,7 @@ const HowItWorks = () => {
     <section id="how-it-works" className="bg-[#0b0b0b] border-t border-[#1a1a1a] px-8 lg:px-14 py-24">
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
         <div>
-          <p className="text-sm text-[#666] tracking-[0.2em] uppercase mb-5">How it works</p>
+          <p className="text-sm text-[#999] tracking-[0.2em] uppercase mb-5">How it works</p>
           <h2
             className="text-[#f0f0f0] font-semibold"
             style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', lineHeight: 1.05, letterSpacing: '-0.035em' }}
@@ -38,7 +38,7 @@ const HowItWorks = () => {
             From conversation<br />to live automation.
           </h2>
         </div>
-        <p className="text-[#888] text-lg leading-relaxed max-w-sm">
+        <p className="text-[#b8b8b8] text-lg leading-relaxed max-w-sm">
           Four steps. No surprises. You know what's happening at every stage.
         </p>
       </div>
@@ -62,10 +62,10 @@ const HowItWorks = () => {
                 )}
               </div>
               <h3 className="text-[#d0d0d0] font-medium mb-4 text-xl">{s.title}</h3>
-              <p className="text-[#9a9a9a] text-lg leading-relaxed">{s.body}</p>
+              <p className="text-[#c0c0c0] text-lg leading-relaxed">{s.body}</p>
             </div>
             <div className="mt-8 pt-5 border-t border-[#1a1a1a]">
-              <span className="text-sm text-[#555] tracking-wide">{s.detail}</span>
+              <span className="text-sm text-[#888] tracking-wide">{s.detail}</span>
             </div>
           </div>
         ))}
