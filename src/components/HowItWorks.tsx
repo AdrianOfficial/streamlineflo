@@ -5,12 +5,12 @@ const steps = [
     num: '01',
     title: 'Discovery call',
     body: '30 minutes. You walk us through what your team does. We identify where time is going. No prep needed.',
-    detail: '30 min — free, no commitment',
+    detail: '30 min, free, no commitment',
   },
   {
     num: '02',
     title: 'Automation blueprint',
-    body: "We map what's automatable, estimate the return, and write it up as a clear plan — before any code gets written.",
+    body: "We map what's automatable, estimate the return, and write it up as a clear plan. Before any code gets written.",
     detail: 'Delivered within 48 hours',
   },
   {
@@ -23,7 +23,7 @@ const steps = [
     num: '04',
     title: 'Handover & support',
     body: 'Full docs, a walkthrough, and ongoing support. If something breaks or your tools change, we handle it.',
-    detail: 'Ongoing — no lock-in',
+    detail: 'Ongoing, no lock-in',
   },
 ];
 
